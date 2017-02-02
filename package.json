@@ -4,6 +4,7 @@
   "description": "blackend for eduo",
   "main": "server.js",
   "scripts": {
+    "server" :
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,30 @@
   "bugs": {
     "url": "https://github.com/ntsd/eduo-server/issues"
   },
-  "homepage": "https://github.com/ntsd/eduo-server#readme"
+  "homepage": "https://github.com/ntsd/eduo-server#readme",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "bluebird": "^3.4.1",
+    "body-parser": "^1.15.2",
+    "co": "^4.6.0",
+    "common-errors": "^1.0.0",
+    "config": "^1.21.0",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "express-jwt": "^5.1.0",
+    "get-parameter-names": "^0.3.0",
+    "http-status": "^0.2.3",
+    "joi": "^9.0.4",
+    "jsonwebtoken": "^7.1.9",
+    "kafka-node": "^1.0.3",
+    "lodash": "^4.15.0",
+    "moment": "^2.15.2",
+    "mongoose": "^4.6.1",
+    "mongoose-auto-increment": "^5.0.1",
+    "mongoose-timestamp": "^0.6.0",
+    "nodemailer": "^2.6.4",
+    "socket.io": "^1.5.1",
+    "swagger-ui-express": "^1.0.2",
+    "winston": "^2.2.0"
+  }
 }
