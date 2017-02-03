@@ -4,7 +4,7 @@
   "description": "blackend for eduo",
   "main": "server.js",
   "scripts": {
-    "server" :
+    "server" : "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
