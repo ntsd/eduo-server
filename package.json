@@ -4,8 +4,8 @@
   "description": "blackend for eduo",
   "main": "server.js",
   "scripts": {
-    "server" : "",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "testdata": "node generate-test-data.js",
   },
   "repository": {
     "type": "git",
@@ -41,5 +41,14 @@
     "socket.io": "^1.5.1",
     "swagger-ui-express": "^1.0.2",
     "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.3.1",
+    "eslint-config-airbnb-base": "^5.0.2",
+    "eslint-plugin-import": "^1.13.0",
+    "nodemon": "^1.11.0"
+  },
+  "engines": {
+    "node": "7.2.1"
   }
 }
