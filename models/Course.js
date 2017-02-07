@@ -3,8 +3,6 @@
  */
 'use strict';
 
-const joi = require('joi');
-
 const _ = require('lodash');
 const mongoose = require('../datasource').getMongoose();
 const timestamps = require('mongoose-timestamp');
@@ -29,7 +27,7 @@ if (!CourseSchema.options.toObject) {
     CourseSchema.options.toObject = {};
 }
 
-CourseSchema.options.toObject.transform = function (doc, ret) {
+CourseSchema.options.toObject.transform = function (doc, ret, options) {
     const sanitized = _.omit(ret);
     return sanitized;
 };

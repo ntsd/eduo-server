@@ -9,9 +9,6 @@ const joi = require('joi');
 const models = require('../models');
 
 const Course = models.Course;
-const helper = require('../common/helper');
-const errors = require('common-errors');
-const _ = require('lodash');
 
 // Exports
 module.exports = {
@@ -20,7 +17,8 @@ module.exports = {
     getAll,
     getAllByName,
     getByName,
-    getById
+    getById,
+    getSingle
 };
 
 const courseCreatorUpdateEntityJoi = joi.object().keys({
@@ -39,13 +37,19 @@ create.schema = {
     entity: courseCreatorUpdateEntityJoi
 };
 
-function* create(courseId, entity) {
-    if (!entity.status) {
-        entity.status = DroneStatus.IDLE_READY;
-    }
-
-    entity.provider = providerId;
-    const created = yield Drone.create(entity);
+function* create(entity) {
+    const created = yield Course.create(entity);
     return created.toObject();
 }
 
+function* getSingle(name) {
+    const course = yield Course.findOne({id: id});
+    if (!course) {
+        throw new errors.NotFoundError(`dont' have course , id = ${name}`);
+    }
+    return course.toObject();
+}
+
+function* getAll() {
+
+}
