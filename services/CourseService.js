@@ -6,18 +6,15 @@
 
 const joi = require('joi');
 
-const models = require('../models');
+const course = require('../models/Course');
 
-const Course = models.Course;
+const Course = course;
 
 // Exports
 module.exports = {
     create,
     update,
     getAll,
-    getAllByName,
-    getByName,
-    getById,
     getSingle
 };
 
@@ -42,10 +39,20 @@ function* create(entity) {
     return created.toObject();
 }
 
-function* getSingle(name) {
+function* update(id, entity){
+    const course = yield Course.findOne({_id: id});
+    if (!course) {
+        throw new errors.NotFoundError('Mission not found');
+    }
+    _.extend(course, entity);
+    yield course.save();
+    return course.toObject();
+}
+
+function* getSingle(id) {
     const course = yield Course.findOne({id: id});
     if (!course) {
-        throw new errors.NotFoundError(`dont' have course , id = ${name}`);
+        throw new errors.NotFoundError(`dont' have course , id = ${id}`);
     }
     return course.toObject();
 }

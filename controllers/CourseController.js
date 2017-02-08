@@ -17,7 +17,7 @@ function* create(req, res) {
 }
 
 function* update(req, res) {
-
+    res.json(yield CourseService.update(req.params.id, req.body));
 }
 
 function* getSingle(req, res) {

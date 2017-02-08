@@ -16,20 +16,20 @@ const errors = require('common-errors');
 const httpStatus = require('http-status');
 const ObjectId = require('../datasource').getMongoose().Types.ObjectId;
 
-global.Promise.promisifyAll(bcrypt);
+//global.Promise.promisifyAll(bcrypt);
 
 module.exports = {
-  wrapExpress,
-  autoWrapExpress,
-  sanitizeArray,
-  hashString,
-  validateHash,
-  sanitizeSchema,
-  getFlatternDistance,
-  splitQueryToArray,
-  validateObjectId,
-  convertQueryFieldStringToArray,
-  convertArrayToProjectionObject,
+    wrapExpress,
+    autoWrapExpress,
+    sanitizeArray,
+    hashString,
+    validateHash,
+    sanitizeSchema,
+    getFlatternDistance,
+    splitQueryToArray,
+    validateObjectId,
+    convertQueryFieldStringToArray,
+    convertArrayToProjectionObject,
 };
 
 /**
@@ -40,13 +40,13 @@ module.exports = {
  * @param name
  */
 function* splitQueryToArray(query, name) {
-  if (query[name]) {
-    try {
-      query[name] = query[name].split(',');
-    } catch (e) {
-      throw new errors.ArgumentError(`${name} must be array`, 400);
+    if (query[name]) {
+        try {
+            query[name] = query[name].split(',');
+        } catch (e) {
+            throw new errors.ArgumentError(`${name} must be array`, 400);
+        }
     }
-  }
 }
 /**
  * Wrap generator function to standard express function
@@ -54,9 +54,9 @@ function* splitQueryToArray(query, name) {
  * @returns {Function} the wrapped function
  */
 function wrapExpress(fn) {
-  return function (req, res, next) {
-    co(fn(req, res, next)).catch(next);
-  };
+    return function (req, res, next) {
+        co(fn(req, res, next)).catch(next);
+    };
 }
 
 /**
@@ -65,19 +65,19 @@ function wrapExpress(fn) {
  * @returns {Object|Array} the wrapped object
  */
 function autoWrapExpress(obj) {
-  if (_.isArray(obj)) {
-    return obj.map(autoWrapExpress);
-  }
-  if (_.isFunction(obj)) {
-    if (obj.constructor.name === 'GeneratorFunction') {
-      return wrapExpress(obj);
+    if (_.isArray(obj)) {
+        return obj.map(autoWrapExpress);
     }
+    if (_.isFunction(obj)) {
+        if (obj.constructor.name === 'GeneratorFunction') {
+            return wrapExpress(obj);
+        }
+        return obj;
+    }
+    _.each(obj, (value, key) => {
+        obj[key] = autoWrapExpress(value);
+    });
     return obj;
-  }
-  _.each(obj, (value, key) => {
-    obj[key] = autoWrapExpress(value);
-  });
-  return obj;
 }
 
 /**
@@ -87,14 +87,14 @@ function autoWrapExpress(obj) {
  * @param {arry}      Array         the array to sanitize
  */
 function sanitizeArray(arry) {
-  if (_.isArray(arry)) {
-    const response = [];
-    _.forEach(arry, (single) => {
-      response.push(single.toObject());
-    });
-    return response;
-  }
-  return arry.toObject();
+    if (_.isArray(arry)) {
+        const response = [];
+        _.forEach(arry, (single) => {
+            response.push(single.toObject());
+        });
+        return response;
+    }
+    return arry.toObject();
 }
 
 /**
@@ -104,7 +104,7 @@ function sanitizeArray(arry) {
  * @param {String}    text          the text to validate against
  */
 function* validateHash(hash, text) {
-  return yield bcrypt.compareAsync(text, hash);
+    return yield bcrypt.compareAsync(text, hash);
 }
 
 /**
@@ -114,7 +114,7 @@ function* validateHash(hash, text) {
  * @param {Integer}   rounds        the number of rounds
  */
 function* hashString(text, rounds) {
-  return yield bcrypt.hashAsync(text, rounds);
+    return yield bcrypt.hashAsync(text, rounds);
 }
 
 /**
@@ -122,26 +122,26 @@ function* hashString(text, rounds) {
  * @param  {Object} schema mongoose model schema
  */
 function sanitizeSchema(schema) {
-  if (!schema.options.toObject) {
-    schema.options.toObject = {};
-  }
-  if (!schema.options.toJSON) {
-    schema.options.toJSON = {};
-  }
+    if (!schema.options.toObject) {
+        schema.options.toObject = {};
+    }
+    if (!schema.options.toJSON) {
+        schema.options.toJSON = {};
+    }
 
-  /**
-   * Transform the given document to be sent to client
-   *
-   * @param  {Object}   doc         the document to transform
-   * @param  {Object}   ret         the already converted object
-   * @param  {Object}   options     the transform options
-   */
-  const transform = function (doc, ret, options) { // eslint-disable-line no-unused-vars
-    const sanitized = _.omit(ret, '__v', '_id', 'createdAt', 'updatedAt');
-    sanitized.id = doc._id;
-    return sanitized;
-  };
-  schema.options.toJSON.transform = schema.options.toObject.transform = transform;
+    /**
+     * Transform the given document to be sent to client
+     *
+     * @param  {Object}   doc         the document to transform
+     * @param  {Object}   ret         the already converted object
+     * @param  {Object}   options     the transform options
+     */
+    const transform = function (doc, ret, options) { // eslint-disable-line no-unused-vars
+        const sanitized = _.omit(ret, '__v', '_id', 'createdAt', 'updatedAt');
+        sanitized.id = doc._id;
+        return sanitized;
+    };
+    schema.options.toJSON.transform = schema.options.toObject.transform = transform;
 }
 
 
@@ -151,53 +151,53 @@ function sanitizeSchema(schema) {
  * @param coordinates2
  */
 function getFlatternDistance(coordinates1, coordinates2) {
-  const lng1 = coordinates1[1];
-  const lat1 = coordinates1[0];
+    const lng1 = coordinates1[1];
+    const lat1 = coordinates1[0];
 
-  const lng2 = coordinates2[1];
-  const lat2 = coordinates2[0];
+    const lng2 = coordinates2[1];
+    const lat2 = coordinates2[0];
 
-  if (lng2 === lng1 && lat1 === lat2) {
-    return 0;
-  }
+    if (lng2 === lng1 && lat1 === lat2) {
+        return 0;
+    }
 
-  function getRad(d) {
-    return d * PI / 180.0;
-  }
+    function getRad(d) {
+        return d * PI / 180.0;
+    }
 
-  const EARTH_RADIUS = 6378137.0; // ??M
-  const PI = Math.PI;
+    const EARTH_RADIUS = 6378137.0; // ??M
+    const PI = Math.PI;
 
-  const f = getRad((lat1 + lat2) / 2);
-  const g = getRad((lat1 - lat2) / 2);
-  const l = getRad((lng1 - lng2) / 2);
+    const f = getRad((lat1 + lat2) / 2);
+    const g = getRad((lat1 - lat2) / 2);
+    const l = getRad((lng1 - lng2) / 2);
 
-  let sg = Math.sin(g);
-  let sl = Math.sin(l);
-  let sf = Math.sin(f);
+    let sg = Math.sin(g);
+    let sl = Math.sin(l);
+    let sf = Math.sin(f);
 
-  let s,
-    c,
-    w,
-    r,
-    d,
-    h1,
-    h2;
-  const a = EARTH_RADIUS;
-  const fl = 1 / 298.257;
+    let s,
+        c,
+        w,
+        r,
+        d,
+        h1,
+        h2;
+    const a = EARTH_RADIUS;
+    const fl = 1 / 298.257;
 
-  sg *= sg;
-  sl *= sl;
-  sf *= sf;
+    sg *= sg;
+    sl *= sl;
+    sf *= sf;
 
-  s = sg * (1 - sl) + (1 - sf) * sl;
-  c = (1 - sg) * (1 - sl) + sf * sl;
-  w = Math.atan(Math.sqrt(s / c));
-  r = Math.sqrt(s * c) / w;
-  d = 2 * w * a;
-  h1 = (3 * r - 1) / 2 / c;
-  h2 = (3 * r + 1) / 2 / s;
-  return d * (1 + fl * (h1 * sf * (1 - sg) - h2 * (1 - sf) * sg));
+    s = sg * (1 - sl) + (1 - sf) * sl;
+    c = (1 - sg) * (1 - sl) + sf * sl;
+    w = Math.atan(Math.sqrt(s / c));
+    r = Math.sqrt(s * c) / w;
+    d = 2 * w * a;
+    h1 = (3 * r - 1) / 2 / c;
+    h2 = (3 * r + 1) / 2 / s;
+    return d * (1 + fl * (h1 * sf * (1 - sg) - h2 * (1 - sf) * sg));
 }
 
 
@@ -209,27 +209,27 @@ function getFlatternDistance(coordinates1, coordinates2) {
  * @returns {*}
  */
 Date.prototype.format = function (format) {
-  const o = {
-    'M+': this.getMonth() + 1, // month
-    'd+': this.getDate(), // day
-    'h+': this.getHours(), // hour
-    'm+': this.getMinutes(), // minute
-    's+': this.getSeconds(), // second
-    'q+': Math.floor((this.getMonth() + 3) / 3), // quarter
-    S: this.getMilliseconds(), // millisecond
-  };
-  if (/(y+)/.test(format)) {
-    format = format.replace(RegExp.$1,
-      (this.getFullYear() + '').substr(4 - RegExp.$1.length));
-  }
-  for (const k in o) {
-    if (new RegExp('(' + k + ')').test(format)) {
-      format = format.replace(RegExp.$1,
-        RegExp.$1.length === 1 ? o[k] :
-          ('00' + o[k]).substr(('' + o[k]).length));
+    const o = {
+        'M+': this.getMonth() + 1, // month
+        'd+': this.getDate(), // day
+        'h+': this.getHours(), // hour
+        'm+': this.getMinutes(), // minute
+        's+': this.getSeconds(), // second
+        'q+': Math.floor((this.getMonth() + 3) / 3), // quarter
+        S: this.getMilliseconds(), // millisecond
+    };
+    if (/(y+)/.test(format)) {
+        format = format.replace(RegExp.$1,
+            (this.getFullYear() + '').substr(4 - RegExp.$1.length));
     }
-  }
-  return format;
+    for (const k in o) {
+        if (new RegExp('(' + k + ')').test(format)) {
+            format = format.replace(RegExp.$1,
+                RegExp.$1.length === 1 ? o[k] :
+                    ('00' + o[k]).substr(('' + o[k]).length));
+        }
+    }
+    return format;
 };
 
 /**
@@ -237,9 +237,9 @@ Date.prototype.format = function (format) {
  * @param  {String} id the string to validate
  */
 function validateObjectId(id) {
-  if (!ObjectId.isValid(id)) {
-    throw new errors.HttpStatusError(httpStatus.BAD_REQUEST, `id ${id} is not valid`);
-  }
+    if (!ObjectId.isValid(id)) {
+        throw new errors.HttpStatusError(httpStatus.BAD_REQUEST, `id ${id} is not valid`);
+    }
 }
 /**
  * Helper method to convert query field string like a,b,c to array ['a', 'b', 'c']
@@ -247,10 +247,10 @@ function validateObjectId(id) {
  * @returns {*}
  */
 function convertQueryFieldStringToArray(queryFieldString) {
-  if (queryFieldString && queryFieldString.length > 0) {
-    return queryFieldString.split(',');
-  }
-  return [];
+    if (queryFieldString && queryFieldString.length > 0) {
+        return queryFieldString.split(',');
+    }
+    return [];
 }
 /**
  * Helper method to convert array of field names to the projection object of Mongoose
@@ -266,9 +266,9 @@ function convertQueryFieldStringToArray(queryFieldString) {
  * @returns {*}
  */
 function convertArrayToProjectionObject(fieldArray) {
-  let projection = null;
-  if (fieldArray && fieldArray.length > 0) {
-    projection = Object.assign(...fieldArray.map(field => ({[field]: 1})));
-  }
-  return projection;
+    let projection = null;
+    if (fieldArray && fieldArray.length > 0) {
+        projection = Object.assign(...fieldArray.map(field => ({[field]: 1})));
+    }
+    return projection;
 }
