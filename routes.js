@@ -9,7 +9,14 @@ module.exports = {
             controller: 'CourseController',
             method: 'create'
         }
+    },
+    '/course/getsingle': {
+        get: {
+            controller: 'CourseController',
+            method: 'getSingle'
+        }
     }
+
     // '/login/social': {
     //     post: {
     //         controller: 'UserController',

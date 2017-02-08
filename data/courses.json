@@ -1,4 +1,3 @@
-
 [
   {
     "courseId": "589ae9d152a10e5925c404b0",
@@ -6,8 +5,8 @@
     "description": "Description",
     "price": 3220,
     "teacher": "Teacher Espinoza",
-    "startDate": "2014-06-20T07:49:43 -07:00",
-    "endDate": "2014-09-28T10:18:00 -07:00",
+    "startDate": "2014-06-20T07:49:43",
+    "endDate": "2014-09-28T07:49:43",
     "email": "espinozaalvarado@utara.com",
     "courseTime": "day"
   },
@@ -17,8 +16,8 @@
     "description": "Description",
     "price": 4619,
     "teacher": "Teacher Pam",
-    "startDate": "2014-03-22T11:04:14 -07:00",
-    "endDate": "2016-12-30T10:25:18 -07:00",
+    "startDate": "2014-03-22T11:04:14",
+    "endDate": "2016-12-30T10:25:18",
     "email": "pamalvarado@utara.com",
     "courseTime": "day"
   },
@@ -28,8 +27,8 @@
     "description": "Description",
     "price": 1865,
     "teacher": "Teacher Mable",
-    "startDate": "2015-05-25T02:06:26 -07:00",
-    "endDate": "2016-08-05T05:26:06 -07:00",
+    "startDate": "2015-05-25T02:06:26",
+    "endDate": "2016-08-05T05:26:06",
     "email": "mablealvarado@utara.com",
     "courseTime": "day"
   },
@@ -39,8 +38,8 @@
     "description": "Description",
     "price": 1939,
     "teacher": "Teacher Socorro",
-    "startDate": "2014-02-06T02:40:37 -07:00",
-    "endDate": "2014-01-14T06:12:43 -07:00",
+    "startDate": "2014-02-06T02:40:37",
+    "endDate": "2014-01-14T06:12:43",
     "email": "socorroalvarado@utara.com",
     "courseTime": "day"
   },
@@ -50,8 +49,8 @@
     "description": "Description",
     "price": 1575,
     "teacher": "Teacher Rhonda",
-    "startDate": "2016-05-21T08:23:02 -07:00",
-    "endDate": "2016-12-12T07:32:59 -07:00",
+    "startDate": "2016-05-21T08:23:02",
+    "endDate": "2016-12-12T07:32:59",
     "email": "rhondaalvarado@utara.com",
     "courseTime": "day"
   },
@@ -61,8 +60,8 @@
     "description": "Description",
     "price": 4719,
     "teacher": "Teacher Albert",
-    "startDate": "2014-05-15T10:27:43 -07:00",
-    "endDate": "2014-11-08T07:47:35 -07:00",
+    "startDate": "2014-05-15T10:27:43",
+    "endDate": "2014-11-08T07:47:35",
     "email": "albertalvarado@utara.com",
     "courseTime": "day"
   },
@@ -72,8 +71,8 @@
     "description": "Description",
     "price": 4744,
     "teacher": "Teacher Stanton",
-    "startDate": "2014-02-07T08:12:10 -07:00",
-    "endDate": "2016-04-29T05:36:46 -07:00",
+    "startDate": "2014-02-07T08:12:10",
+    "endDate": "2016-04-29T05:36:46",
     "email": "stantonalvarado@utara.com",
     "courseTime": "day"
   },
@@ -83,8 +82,8 @@
     "description": "Description",
     "price": 2530,
     "teacher": "Teacher Doris",
-    "startDate": "2016-04-02T01:48:17 -07:00",
-    "endDate": "2016-01-29T08:59:48 -07:00",
+    "startDate": "2016-04-02T01:48:17",
+    "endDate": "2016-01-29T08:59:48",
     "email": "dorisalvarado@utara.com",
     "courseTime": "day"
   },
@@ -94,8 +93,8 @@
     "description": "Description",
     "price": 1369,
     "teacher": "Teacher Meyer",
-    "startDate": "2016-04-09T12:44:48 -07:00",
-    "endDate": "2015-07-07T03:15:43 -07:00",
+    "startDate": "2016-04-09T12:44:48",
+    "endDate": "2015-07-07T03:15:43",
     "email": "meyeralvarado@utara.com",
     "courseTime": "day"
   },
@@ -105,8 +104,8 @@
     "description": "Description",
     "price": 3019,
     "teacher": "Teacher Goodwin",
-    "startDate": "2015-04-10T10:05:49 -07:00",
-    "endDate": "2016-03-27T05:45:26 -07:00",
+    "startDate": "2015-04-10T10:05:49",
+    "endDate": "2016-03-27T05:45:26",
     "email": "goodwinalvarado@utara.com",
     "courseTime": "day"
   }

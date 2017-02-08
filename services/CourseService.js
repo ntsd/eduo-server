@@ -6,9 +6,9 @@
 
 const joi = require('joi');
 
-const course = require('../models/Course');
+const models = require('../models');
 
-const Course = course;
+const Course = models.Course;
 
 // Exports
 module.exports = {

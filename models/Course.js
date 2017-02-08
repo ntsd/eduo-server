@@ -6,11 +6,12 @@
 const _ = require('lodash');
 const mongoose = require('../datasource').getMongoose();
 const timestamps = require('mongoose-timestamp');
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const CourseSchema = new mongoose.Schema({
     // format [longitude, latitude]
     // needed for $near query https://docs.mongodb.com/manual/reference/operator/query/near/
-    courseId: {type: [Number], required: true},
+    courseId: {type: ObjectId, required: true},
     name: {type: String, required: true},
     description: {type: String, required: false},
     price: {type: Number, required: true},

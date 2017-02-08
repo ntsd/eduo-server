@@ -21,10 +21,8 @@ co(function*() {
     logger.info('deleting previous data');
     yield Course.remove({});
 
-    logger.info('create course data');
-    for (let i = 0; i < courses.length; i += 1) {
-        yield Course.create(courses[i]);
-    }
+    logger.info(`create ${courses.length} course data`);
+    yield Course.create(courses);
 
     logger.info('data created successfully');
 }).then(() => {
