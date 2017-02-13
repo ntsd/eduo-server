@@ -10,6 +10,8 @@ const models = require('../models');
 
 const Course = models.Course;
 
+const _ = require('lodash');
+
 // Exports
 module.exports = {
     create,
@@ -18,21 +20,21 @@ module.exports = {
     getSingle
 };
 
-const courseCreatorUpdateEntityJoi = joi.object().keys({
-    courseId: joi.number(),
-    name: joi.string(),
-    description: joi.string(),
-    price: joi.number(),
-    teacher: joi.string(),
-    startDate: joi.number().positive().required().strict(),
-    endDate: joi.number().positive().required().strict(),
-    email : joi.string(),
-    courseTime: joi.number(),
-}).required();
-
-create.schema = {
-    entity: courseCreatorUpdateEntityJoi
-};
+// const courseCreatorUpdateEntityJoi = joi.object().keys({
+//     courseId: joi.number(),
+//     name: joi.string(),
+//     description: joi.string(),
+//     price: joi.number(),
+//     teacher: joi.string(),
+//     startDate: joi.number().positive().required().strict(),
+//     endDate: joi.number().positive().required().strict(),
+//     email : joi.string(),
+//     courseTime: joi.number(),
+// }).required();
+//
+// create.schema = {
+//     entity: courseCreatorUpdateEntityJoi
+// };
 
 function* create(entity) {
     const created = yield Course.create(entity);
@@ -50,7 +52,7 @@ function* update(id, entity){
 }
 
 function* getSingle(id) {
-    const course = yield Course.findOne({id: id});
+    const course = yield Course.findOne({courseId: id});
     if (!course) {
         throw new errors.NotFoundError(`dont' have course , id = ${id}`);
     }

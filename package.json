@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node app.js",
+    "dev": "nodemon app.js",
     "testdata": "node generate-test-data.js"
   },
   "repository": {
@@ -40,7 +41,8 @@
     "nodemailer": "^2.6.4",
     "socket.io": "^1.5.1",
     "swagger-ui-express": "^1.0.2",
-    "winston": "^2.2.0"
+    "winston": "^2.2.0",
+    "node-env-file": "^0.1.8"
   },
   "devDependencies": {
     "eslint": "^3.3.1",

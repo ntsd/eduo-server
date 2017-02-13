@@ -12,18 +12,8 @@ const UserSchema = new mongoose.Schema({
     password: {type: String},
     firstName: {type: String},
     lastName: {type: String},
-    socialNetworkType: {type: String, enum: _.values(enums.SocialType)},
-    socialNetworkId: {type: String},
-    socialNetworkAccessToken: {type: String},
-    resetPasswordCode: {type: String},
-    resetPasswordExpiration: Date,
-    avatarUrl: {type: String},
-    phone: {type: String},
-    role: {type: String, enum: _.values(enums.Role)},
-    address: {type: Address},
-
-    provider: {type: mongoose.Schema.Types.ObjectId, ref: 'Provider', required: false},
-
+    facebookId: {type: String},
+    facebookToken: {type: String}
 });
 
 UserSchema.plugin(timestamps);

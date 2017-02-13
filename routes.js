@@ -4,13 +4,13 @@
 const auth = require('./common/Auth.js');
 
 module.exports = {
-    '/course/create': {
+    '/course/create/': {
         post: {
             controller: 'CourseController',
             method: 'create'
         }
     },
-    '/course/getsingle': {
+    '/course/getsingle/:id': {
         get: {
             controller: 'CourseController',
             method: 'getSingle'

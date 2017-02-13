@@ -20,7 +20,7 @@ const io = require('socket.io')(http);
 app.set('port', config.PORT);
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({extended: true})); //If Encode Can't test with postman
 app.use(cors());
 const apiRouter = express.Router();
 
@@ -62,7 +62,7 @@ app.use(errorMiddleware());
 
 
 http.listen(app.get('port'), () => {
-    winston.info(`Express server listening on port ${app.get('port')}`);
+    winston.info(`Eduo Server listening on port ${app.get('port')}`);
 });
 
 module.exports = app;

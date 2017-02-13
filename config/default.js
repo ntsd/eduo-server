@@ -1,14 +1,5 @@
-/**
- * Copyright (c) 2016 Topcoder Inc, All rights reserved.
- */
-'use strict';
-
-/**
- * The default configuration file.
- *
- * @author      kbowerma
- * @version     1.1
- */
+var env = require('node-env-file');
+env(__dirname + '/../.env');
 
 module.exports = {
 

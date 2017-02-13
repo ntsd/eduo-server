@@ -12,6 +12,9 @@
 // The mongoose instance.
 const _mongoose = require('mongoose');
 
+var env = require('node-env-file');
+env(__dirname + '/.env');
+
 // use bluebird promise library instead of mongoose default promise library
 _mongoose.Promise = global.Promise;
 
@@ -28,13 +31,13 @@ function getDb(url, poolSize) {
         var options = {
             db: { native_parser: true },
             server: { poolSize: 5 },
-            user: 'ntsd',
-            password: 'ntsd',
+            user: process.env.DB_USER,
+            password: process.env.DB_PASSWORD,
             auth: {
                 authdb: 'admin'
             }
         }
-        const db = _mongoose.createConnection('mongodb://localhost:27017/hotcode', options);
+        const db = _mongoose.createConnection(process.env.DB_URL, options);
         dbs[url] = db;
     }
     return dbs[url];
