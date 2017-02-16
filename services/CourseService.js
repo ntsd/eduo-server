@@ -21,15 +21,24 @@ module.exports = {
 };
 
 // const courseCreatorUpdateEntityJoi = joi.object().keys({
-//     courseId: joi.number(),
-//     name: joi.string(),
+//     subject: joi.string().required(),
 //     description: joi.string(),
+//     hour : joi.number(),
 //     price: joi.number(),
+//     promotion_price: joi.number(),
 //     teacher: joi.string(),
-//     startDate: joi.number().positive().required().strict(),
-//     endDate: joi.number().positive().required().strict(),
+//     startDate: joi.date().timestamp(),
+//     endDate: joi.date().timestamp(),
 //     email : joi.string(),
+//     study_times: joi.number(),
 //     courseTime: joi.number(),
+//     rating: joi.number(),
+//     address: joi.string(),
+//     website: joi.string(),
+//     phone: joi.string(),
+//     tags: joi.array(),
+//     images: joi.string(),
+//     institute: joi.string()
 // }).required();
 //
 // create.schema = {

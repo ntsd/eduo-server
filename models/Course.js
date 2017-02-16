@@ -8,18 +8,30 @@ const mongoose = require('../datasource').getMongoose();
 const timestamps = require('mongoose-timestamp');
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
+
+
 const CourseSchema = new mongoose.Schema({
     // format [longitude, latitude]
     // needed for $near query https://docs.mongodb.com/manual/reference/operator/query/near/
-    courseId: {type: ObjectId, required: true},
-    name: {type: String, required: true},
+    subject: {type: String, required: true},
     description: {type: String, required: false},
-    price: {type: Number, required: true},
-    teacher: String,
+    hour : {type: Number},
+    price: {type: Number, required: false},
+    teacher: {type: ObjectId, required: false, ref:'User'},
     startDate: {type: Date, required: false},
     endDate: {type: Date, required: false},
-    email : {type: String, required: true},
-    courseTime: {type: String, require: true}
+    email : {type: String, required: false},
+    courseTime: {type: String, require: false},
+    study_times: {type:Number},
+    promotion_price: {type: Number},
+    rating: {type: Number},
+    address: {type: String},
+    website: {type: String},
+    phone: {type: String},
+    tags: {type:Object},
+    images: {type:String},
+    institute: {type: ObjectId, ref:'Institute'}
+
 });
 
 CourseSchema.plugin(timestamps);
@@ -30,8 +42,10 @@ if (!CourseSchema.options.toObject) {
 
 CourseSchema.options.toObject.transform = function (doc, ret, options) {
     const sanitized = _.omit(ret);
+    sanitized.id = doc._id;
     return sanitized;
 };
+
 
 
 module.exports = {

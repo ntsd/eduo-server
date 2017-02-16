@@ -20,8 +20,8 @@ const io = require('socket.io')(http);
 app.set('port', config.PORT);
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true})); //If Encode Can't test with postman
-app.use(cors());
+// app.use(bodyParser.urlencoded({extended: true})); //If Encode Can't test with postman
+// app.use(cors());
 const apiRouter = express.Router();
 
 // include io instance
@@ -30,9 +30,9 @@ apiRouter.use((req, res, next) => {
     next();
 });
 
-io.on('connection', (socket) => {                         // eslint-disable-line no-unused-vars
-    winston.info('socket connection established');
-});
+// io.on('connection', (socket) => {                         // eslint-disable-line no-unused-vars
+//     winston.info('socket connection established');
+// });
 
 // load all routes
 _.each(require('./routes'), (verbs, url) => {

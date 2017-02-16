@@ -12,7 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/ntsd/eduo-server.git"
   },
-  "author": "ntsd",
+  "author": "eduo",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ntsd/eduo-server/issues"

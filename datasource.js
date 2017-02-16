@@ -18,6 +18,9 @@ env(__dirname + '/.env');
 // use bluebird promise library instead of mongoose default promise library
 _mongoose.Promise = global.Promise;
 
+//show log
+_mongoose.set('debug', true);
+
 // The database mapping.
 const dbs = { };
 

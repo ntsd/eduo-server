@@ -13,7 +13,6 @@ module.exports = {
 };
 
 function* create(req, res) {
-    console.log(req.body);
     res.json(yield CourseService.create(req.body));
 }
 
