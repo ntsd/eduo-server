@@ -3,17 +3,21 @@
 const mongoose = require('../datasource').getMongoose();
 const _ = require('lodash');
 const timestamps = require('mongoose-timestamp');
-const enums = require('../enum');
 const Address = require('./Address').AddressSchema;
 
 const UserSchema = new mongoose.Schema({
-    name: {type: String, required: true},
     email: {type: String, required: true},
     password: {type: String},
     firstName: {type: String},
     lastName: {type: String},
-    facebookId: {type: String},
-    facebookToken: {type: String}
+    facebook: {
+        id:{type: Object, trim: true},
+        token: {type:String, trim:true},
+        email: {type:String, trim:true},
+
+    },
+    courses: [{type: ObjectId}],
+    bookmark: [{type: ObjectId}]
 });
 
 UserSchema.plugin(timestamps);

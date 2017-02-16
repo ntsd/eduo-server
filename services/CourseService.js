@@ -20,30 +20,30 @@ module.exports = {
     getSingle
 };
 
-// const courseCreatorUpdateEntityJoi = joi.object().keys({
-//     subject: joi.string().required(),
-//     description: joi.string(),
-//     hour : joi.number(),
-//     price: joi.number(),
-//     promotion_price: joi.number(),
-//     teacher: joi.string(),
-//     startDate: joi.date().timestamp(),
-//     endDate: joi.date().timestamp(),
-//     email : joi.string(),
-//     study_times: joi.number(),
-//     courseTime: joi.number(),
-//     rating: joi.number(),
-//     address: joi.string(),
-//     website: joi.string(),
-//     phone: joi.string(),
-//     tags: joi.array(),
-//     images: joi.string(),
-//     institute: joi.string()
-// }).required();
-//
-// create.schema = {
-//     entity: courseCreatorUpdateEntityJoi
-// };
+const courseCreatorUpdateEntityJoi = joi.object().keys({
+    subject: joi.string().required(),
+    description: joi.string(),
+    hour : joi.number(),
+    price: joi.number(),
+    promotion_price: joi.number(),
+    teacher: joi.string(),
+    startDate: joi.date().timestamp(),
+    endDate: joi.date().timestamp(),
+    email : joi.string(),
+    study_times: joi.number(),
+    courseTime: joi.number(),
+    rating: joi.number(),
+    address: joi.string(),
+    website: joi.string(),
+    phone: joi.string(),
+    tags: joi.array(),
+    images: joi.string(),
+    institute: joi.string()
+}).required();
+
+create.schema = {
+    entity: courseCreatorUpdateEntityJoi
+};
 
 function* create(entity) {
     const created = yield Course.create(entity);

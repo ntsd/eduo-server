@@ -17,7 +17,7 @@ const CourseSchema = new mongoose.Schema({
     description: {type: String, required: false},
     hour : {type: Number},
     price: {type: Number, required: false},
-    teacher: {type: ObjectId, required: false, ref:'User'},
+    teacher: [{type: ObjectId, required: false, ref:'User'}],
     startDate: {type: Date, required: false},
     endDate: {type: Date, required: false},
     email : {type: String, required: false},
