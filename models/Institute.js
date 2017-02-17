@@ -8,7 +8,11 @@ const _ = require('lodash');
 const timestamps = require('mongoose-timestamp');
 
 const InstituteSchema = new mongoose.Schema({
-
+    name: {type:String, require:true},
+    location : {
+        lat: { type: Number},
+        lng: { type: Number}
+    },
 });
 
 InstituteSchema.plugin(timestamps);
@@ -19,7 +23,7 @@ if (!InstituteSchema.options.toObject) {
 
 
 InstituteSchema.options.toObject.transform = function (doc, ret, options) { // eslint-disable-line no-unused-vars
-    const sanitized = _.omit(ret, '__v', '_id');
+    const sanitized = _.omit(ret, '__v', '_id', 'createdAt', 'updatedAt');
     sanitized.id = doc._id;
     return sanitized;
 };

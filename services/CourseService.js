@@ -12,7 +12,6 @@ const Course = models.Course;
 
 const _ = require('lodash');
 
-// Exports
 module.exports = {
     create,
     update,
