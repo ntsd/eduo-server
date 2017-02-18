@@ -4,6 +4,8 @@ const mongoose = require('../datasource').getMongoose();
 const _ = require('lodash');
 const timestamps = require('mongoose-timestamp');
 const Institute = require('./Institute').InstituteSchema;
+const enums = require('../enum');
+const Address = require('./Address').AddressSchema;
 
 const UserSchema = new mongoose.Schema({
     username: {type:String, require: true},
@@ -11,14 +13,17 @@ const UserSchema = new mongoose.Schema({
     password: {type: String, required:true},
     firstName: {type: String},
     lastName: {type: String},
-    facebook: {
-        id:{type: Object, trim: true},
-        token: {type:String, trim:true},
-        email: {type:String, trim:true},
-
-    },
-    courses: [{type: ObjectId}],
-    bookmark: [{type: ObjectId}]
+    socialNetworkType: {type: String, enum: _.values(enums.SocialType)},
+    socialNetworkId: {type: String},
+    socialNetworkAccessToken: {type: String},
+    resetPasswordCode: {type: String},
+    resetPasswordExpiration: Date,
+    avatarUrl: {type: String},
+    phone: {type: String},
+    role: {type: String, enum: _.values(enums.Role)},
+    address: {type: Address},
+    courses: [{type: mongoose.Schema.Types.ObjectId, ref: 'Course'}],
+    bookmark: [{type: mongoose.Schema.Types.ObjectId, ref: 'Course'}]
 });
 
 UserSchema.plugin(timestamps);

@@ -44,6 +44,7 @@ function* validateUniqueUser(entity) {
 // the joi schema for register
 register.schema = {
     entity: joi.object().keys({
+        username: joi.string().required(),
         firstName: joi.string().required(),
         lastName: joi.string().required(),
         email: joi.string().email().required(),
