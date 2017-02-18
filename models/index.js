@@ -13,9 +13,14 @@ const Institute = db.model('Institute', InstituteSchema);
 //User model
 const UserSchema = require('./User').UserSchema;
 const User = db.model('User', UserSchema);
+// Address
+const AddressSchema = require('./Address').AddressSchema;
+const Address = db.model('Address', AddressSchema);
+
 
 module.exports = {
     Course,
     Institute,
-    User
+    User,
+    Address
 };

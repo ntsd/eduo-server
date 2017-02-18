@@ -4,13 +4,44 @@
 const auth = require('./common/Auth.js');
 
 module.exports = {
-    '/course/create/': {
+    '/login': {
+        post: {
+            controller: 'UserController',
+            method: 'login',
+        },
+    },
+    '/register': {
+        post: {
+            controller: 'UserController',
+            method: 'register',
+        },
+    },
+    '/login/social': {
+        post: {
+            controller: 'UserController',
+            middleware: [auth()],
+            method: 'registerSocialUser',
+        },
+    },
+    '/forgot-password': {
+        post: {
+            controller: 'UserController',
+            method: 'forgotPassword',
+        },
+    },
+    '/reset-password': {
+        post: {
+            controller: 'UserController',
+            method: 'resetPassword',
+        },
+    },
+    '/course/create': {
         post: {
             controller: 'CourseController',
             method: 'create'
         }
     },
-    '/course/getsingle/:id': {
+    '/course/:id': {
         get: {
             controller: 'CourseController',
             method: 'getSingle'

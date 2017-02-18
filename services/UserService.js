@@ -50,19 +50,6 @@ register.schema = {
         password: joi.string().required(),
         phone: joi.string().required(),
         role: joi.string().valid(_.values(Role)),
-        provider: joi.object().keys({
-            name: joi.string().required(),
-            status: joi.string().valid(_.values(enums.ProviderStatus)).required(),
-            location: joi.object().keys({
-                coordinates: joi.array().items(joi.number()).length(2).required(),
-                line1: joi.string().required(),
-                line2: joi.string(),
-                city: joi.string().required(),
-                state: joi.string().required(),
-                postalCode: joi.string().required(),
-                primary: joi.boolean().required(),
-            }).required(),
-        }).when('role', {is: Role.PROVIDER, then: joi.required(), otherwise: joi.forbidden()}),
     }).required(),
 };
 
@@ -70,7 +57,7 @@ register.schema = {
 registerSocialUser.schema = {
     auth: joi.object().required(),
     entity: joi.object().keys({
-        name: joi.string().required(),
+        username: joi.string().required(),
         email: joi.string().email().required(),
     }).required(),
 };
@@ -85,24 +72,9 @@ function* register(entity) {
     yield validateUniqueUser(entity);
     // hash password, persist user and generate new jwt token for user
     entity.password = yield helper.hashString(entity.password, config.SALT_WORK_FACTOR);
-    entity.name = `${entity.firstName} ${entity.lastName}`;
+    //entity.name = `${entity.firstName} ${entity.lastName}`;
 
-    entity.role = entity.role || Role.CONSUMER;
-
-    if (entity.role === Role.PROVIDER) {
-        // set initial field
-        _.extend(entity.provider, {
-            keywords: [''], // will be update when package created or updated
-            simpleKeywords: [''], // will be update when package created or updated
-            rating: {// will be update when review of related mission created
-                count: 0,
-                sum: 0,
-                avg: 0,
-            },
-        });
-        const provider = yield Provider.create(entity.provider);
-        entity.provider = provider.id;
-    }
+    entity.role = entity.role || Role.STUDENT;
 
     const user = yield User.create(entity);
 
@@ -134,7 +106,7 @@ function* registerSocialUser(auth, entity) {
     } else {
         entity.socialNetworkId = auth.sub;
         entity.socialNetworkType = auth.sub.substring(0, auth.sub.indexOf('|'));
-        entity.role = Role.CONSUMER;
+        entity.role = Role.STUDENT;
         user = yield User.create(entity);
     }
 
