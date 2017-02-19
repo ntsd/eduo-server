@@ -2,6 +2,8 @@
  * Created by Jiravat on 8/2/2560.
  */
 'use strict';
+//do promise
+global.Promise = require('bluebird');
 
 const config = require('config');
 const _ = require('lodash');
@@ -33,6 +35,8 @@ co(function*() {
         if (u.password) {
             u.password = yield helper.hashString(u.password, config.SALT_WORK_FACTOR);
         }
+        u.courses = [CourseDoc[helper.randomInteger(courses.length)], CourseDoc[helper.randomInteger(courses.length)]];
+        u.bookmarks = [CourseDoc[2], CourseDoc[3]];
         return;
     });
     // ----- Create User ------

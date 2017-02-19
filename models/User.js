@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema({
     role: {type: String, enum: _.values(enums.Role)},
     address: {type: Address},
     courses: [{type: mongoose.Schema.Types.ObjectId, ref: 'Course'}],
-    bookmark: [{type: mongoose.Schema.Types.ObjectId, ref: 'Course'}]
+    bookmarks: [{type: mongoose.Schema.Types.ObjectId, ref: 'Course'}]
 });
 
 UserSchema.plugin(timestamps);

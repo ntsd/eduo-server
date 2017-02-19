@@ -16,7 +16,6 @@ const errors = require('common-errors');
 const httpStatus = require('http-status');
 const ObjectId = require('../datasource').getMongoose().Types.ObjectId;
 
-global.Promise = require('bluebird');
 global.Promise.promisifyAll(bcrypt);
 
 module.exports = {
@@ -31,6 +30,7 @@ module.exports = {
     validateObjectId,
     convertQueryFieldStringToArray,
     convertArrayToProjectionObject,
+    randomInteger,
 };
 
 /**
@@ -272,4 +272,8 @@ function convertArrayToProjectionObject(fieldArray) {
         projection = Object.assign(...fieldArray.map(field => ({[field]: 1})));
     }
     return projection;
+}
+
+function randomInteger(num){
+    return Math.floor((Math.random() * num));
 }

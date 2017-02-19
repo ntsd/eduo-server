@@ -1,6 +1,8 @@
 'use strict';
 
-//require('./bootstrap');
+//Do Promise
+global.Promise = require('bluebird');
+
 const config = require('config');
 const express = require('express');
 const cors = require('cors');
