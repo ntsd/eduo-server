@@ -35,7 +35,7 @@ co(function*() {
         if (u.password) {
             u.password = yield helper.hashString(u.password, config.SALT_WORK_FACTOR);
         }
-        u.courses = [CourseDoc[helper.randomInteger(courses.length)], CourseDoc[helper.randomInteger(courses.length)]];
+        u.courses = [CourseDoc[1], CourseDoc[0]];
         u.bookmarks = [CourseDoc[2], CourseDoc[3]];
         return;
     });

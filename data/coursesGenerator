@@ -1,17 +1,17 @@
-//['{{repeat(10)}}',{
-//  subject: 'Course {{firstName()}}',
-//  description: 'description',
-//  hour : '{{integer(1, 10)}}',
-//  price: '{{floating(1000, 5000)}}',
-//  startDate: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss")}}',
-//  endDate: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss")}}',
-//  email : '{{email()}}',
-//  courseTime: '10:55',
-//  promotion_price: '{{integer(1000, 5000)}}',
-//  rating: '{{floating(0, 5)}}',
-//  address: 'Address',
-//  website: 'www.google.com',
-//  phone: '080-00000000'
-//}
-//
-//]
+['{{repeat(10)}}',{
+  subject: 'Course {{firstName()}}',
+  description: 'description',
+  hour : '{{integer(1, 10)}}',
+  price: '{{floating(1000, 5000)}}',
+  startDate: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss")}}',
+  endDate: '{{date(new Date(2014, 0, 1), new Date(), "YYYY-MM-ddThh:mm:ss")}}',
+  email : '{{email()}}',
+  courseTime: '10:55',
+  promotion_price: '{{integer(1000, 5000)}}',
+  rating: '{{floating(0, 5)}}',
+  address: 'Address',
+  website: 'www.google.com',
+  phone: '080-00000000'
+}
+
+]
