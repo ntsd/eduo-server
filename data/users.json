@@ -1,13 +1,13 @@
 [
   {
-    "name": "user1",
-    "firstName": "fisrt",
-    "lastName": "last",
-    "email": "consumer@consumer.com",
-    "password": "123456",
+    "username": "Rice",
+    "firstName": "Susan",
+    "lastName": "Guerra",
+    "email": "lauriejoyner@reversus.com",
+    "password": "ntsd1234",
     "avatarUrl": "img/thumbnail.png",
     "phone": "+1 123-1234-123",
-    "role":"consumer",
+    "role": "student",
     "address": {
       "coordinates": [
         73,
@@ -21,22 +21,14 @@
     }
   },
   {
-    "name": "user2",
-    "firstName": "fisrt",
-    "lastName": "last",
-    "email": "topcoder@gmail.com",
-    "socialNetworkType": "google-oauth2",
-    "socialNetworkId": 1,
-    "socialNetworkAccessToken": "123456"
-  },
-  {
-    "name": "pilot",
-    "firstName": "fisrt",
-    "lastName": "last",
-    "email": "pilot@pilot.com",
-    "password": "pilot",
-    "avatarUrl": "http://google.com",
+    "username": "Goodman",
+    "firstName": "Rhodes",
+    "lastName": "Frank",
+    "email": "faycarey@geekfarm.com",
+    "password": "ntsd",
+    "avatarUrl": "img/thumbnail.png",
     "phone": "+1 123-1234-123",
+    "role": "student",
     "address": {
       "coordinates": [
         73,
@@ -47,7 +39,6 @@
       "postalCode": "10000",
       "state": "state",
       "primary": true
-    },
-    "role": "pilot"
+    }
   }
 ]

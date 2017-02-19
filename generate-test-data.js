@@ -10,9 +10,11 @@ const helper = require('./common/helper');
 const models = require('./models');
 const moment = require('moment');
 
-const courses = require('./data/courses.json');
-
 const Course = models.Course;
+const User = models.User;
+
+const courses = require('./data/courses.json');
+var users = require('./data/users.json');
 
 // players json data
 const co = require('co');
@@ -20,9 +22,23 @@ const co = require('co');
 co(function*() {
     logger.info('deleting previous data');
     yield Course.remove({});
+    yield User.remove({});
 
+    // ----- Create Course ------
     logger.info(`create ${courses.length} course data`);
-    yield Course.create(courses);
+    const CourseDoc = yield Course.create(courses);
+
+    // encrypt password
+    yield _.map(users, (u) => function* () {
+        if (u.password) {
+            u.password = yield helper.hashString(u.password, config.SALT_WORK_FACTOR);
+        }
+        return;
+    });
+    // ----- Create User ------
+    logger.info(`creating ${users.length} users`);
+    const providerUserDocs = yield User.create(users);
+
 
     logger.info('data created successfully');
 }).then(() => {

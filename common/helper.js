@@ -16,7 +16,8 @@ const errors = require('common-errors');
 const httpStatus = require('http-status');
 const ObjectId = require('../datasource').getMongoose().Types.ObjectId;
 
-//global.Promise.promisifyAll(bcrypt);
+global.Promise = require('bluebird');
+global.Promise.promisifyAll(bcrypt);
 
 module.exports = {
     wrapExpress,
