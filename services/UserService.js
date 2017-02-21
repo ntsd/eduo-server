@@ -39,6 +39,10 @@ function* validateUniqueUser(entity) {
     if (existingUser) {
         throw new errors.ValidationError('email already exists in the system', httpStatus.BAD_REQUEST);
     }
+    const existingUsername = yield User.findOne({username: entity.username});
+    if(existingUsername){
+        throw new errors.ValidationError('Username already exists in the system', httpStatus.BAD_REQUEST);
+    }
 }
 
 // the joi schema for register
