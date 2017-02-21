@@ -60,7 +60,6 @@ function* update(id, entity){
 }
 
 function* getSingle(id) {
-    console.log(id);
     const course = yield Course.findOne({_id: id});
     if (!course) {
         throw new errors.NotFoundError(`dont' have course , id = ${id}`);
