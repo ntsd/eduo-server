@@ -5,7 +5,6 @@
 
 const CourseService = require('../services/CourseService');
 
-// Exports
 module.exports = {
     create,
     update,

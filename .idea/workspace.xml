@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f5f2294b-5106-453d-a88b-2c5e6d2a38c4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/InstituteController.js" afterPath="$PROJECT_DIR$/controllers/InstituteController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/InstituteService.js" afterPath="$PROJECT_DIR$/services/InstituteService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/CourseController.js" afterPath="$PROJECT_DIR$/controllers/CourseController.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,8 +41,8 @@
       <file leaf-file-name="CourseController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/CourseController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="10" />
+            <state relative-caret-position="238">
+              <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -161,7 +160,6 @@
       <list>
         <option value="$PROJECT_DIR$/config/default.js" />
         <option value="$PROJECT_DIR$/models/Level.js" />
-        <option value="$PROJECT_DIR$/controllers/CourseController.js" />
         <option value="$PROJECT_DIR$/models/Institute.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/controllers/UserController.js" />
@@ -186,6 +184,7 @@
         <option value="$PROJECT_DIR$/models/Course.js" />
         <option value="$PROJECT_DIR$/services/InstituteService.js" />
         <option value="$PROJECT_DIR$/controllers/InstituteController.js" />
+        <option value="$PROJECT_DIR$/controllers/CourseController.js" />
       </list>
     </option>
   </component>
@@ -818,15 +817,15 @@
       <workItem from="1487603684223" duration="44000" />
       <workItem from="1487643982408" duration="2710000" />
       <workItem from="1487650290449" duration="802000" />
-      <workItem from="1487841220899" duration="1111000" />
+      <workItem from="1487841220899" duration="2119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128650000" />
+    <option name="totallyTimeSpent" value="129658000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1364" height="726" extended-state="0" />
+    <frame x="1" y="1" width="1364" height="726" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1229,8 +1228,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/CourseController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="10" />
+        <state relative-caret-position="238">
+          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
           <folding />
         </state>
       </provider>
