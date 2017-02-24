@@ -32,19 +32,47 @@ module.exports = {
     '/reset-password': {
         post: {
             controller: 'UserController',
-            method: 'resetPassword',
+            method: 'resetPassword'
         },
-    },
-    '/course/create': {
-        post: {
-            controller: 'CourseController',
-            method: 'create'
-        }
     },
     '/course/:id': {
         get: {
             controller: 'CourseController',
             method: 'getSingle'
+        }
+    },
+    '/course/create': {
+        post: {
+            controller: 'CourseController',
+            method: 'create',
+            middleware: [auth()],
+        }
+    },
+    '/course/update': {
+        get: {
+            controller: 'CourseController',
+            method: 'update',
+            middleware: [auth()],
+        }
+    },
+    '/institute/:id': {
+        get: {
+            controller: 'InstituteController',
+            method: 'getSingle'
+        }
+    },
+    '/institute/create': {
+        get: {
+            controller: 'InstituteController',
+            method: 'create',
+            middleware: [auth()],
+        }
+    },
+    '/Institute/update': {
+        get: {
+            controller: 'InstituteController',
+            method: 'update',
+            middleware: [auth()],
         }
     }
 

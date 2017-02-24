@@ -1,7 +1,7 @@
 /**
  * Created by Jiravat on 17/2/2560.
  */
-const InstituteServiceService = require('../services/InstituteService');
+const InstituteService = require('../services/InstituteService');
 
 module.exports = {
     create,
@@ -10,13 +10,13 @@ module.exports = {
 };
 
 function* create(req, res) {
-    res.json(yield InstituteServiceService.create(req.body));
+    res.json(yield InstituteService.create(req.body));
 }
 
 function* update(req, res) {
-    res.json(yield InstituteServiceService.update(req.params.id, req.body));
+    res.json(yield InstituteService.update(req.params.id, req.body));
 }
 
 function* getSingle(req, res) {
-    res.json(yield InstituteServiceService.getSingle(req.params.id));
+    res.json(yield InstituteService.getSingle(req.params.id));
 }
