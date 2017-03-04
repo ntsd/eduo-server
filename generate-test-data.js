@@ -34,8 +34,7 @@ co(function*() {
     // ----- Create Course ------
     logger.info(`create ${courses.length} course data`);
     yield _.map(courses, (c) => function* () {
-        c.courses = [CourseDoc[1], CourseDoc[0]];
-        u.bookmarks = [CourseDoc[2], CourseDoc[3]];
+        c.institute = InstituteDocs[0].id;
         return;
     });
     const CourseDoc = yield Course.create(courses);

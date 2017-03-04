@@ -48,7 +48,7 @@ module.exports = {
         },
         delete: {
             controller: 'CourseController',
-            method: 'delete',
+            method: 'deleteSingle',
             middleware: [auth()],
         }
     },
@@ -71,7 +71,7 @@ module.exports = {
         },
         delete: {
             controller: 'InstituteController',
-            method: 'delete',
+            method: 'deleteSingle',
             middleware: [auth()],
         }
     },

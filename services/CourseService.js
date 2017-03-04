@@ -65,6 +65,7 @@ function* getSingle(id) {
     if (!course) {
         throw new errors.NotFoundError(`dont' have course , id = ${id}`);
     }
+    console.log(course.error)
     return course.toObject();
 }
 

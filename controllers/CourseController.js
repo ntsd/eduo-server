@@ -17,7 +17,8 @@ function* create(req, res) {
 }
 
 function* update(req, res) {
-    res.json(yield CourseService.update(req.params.id, req.body));
+    yield CourseService.update(req.params.id, req.body);
+    res.json({msg: "success"}, 200);
 }
 
 function* getSingle(req, res) {
@@ -25,5 +26,8 @@ function* getSingle(req, res) {
 }
 
 function* deleteSingle(req, res) {
-    res.json(yield CourseService.deleteSingle(req.params.id), 204);
+    yield CourseService.deleteSingle(req.params.id);
+    res.json({
+        "msg": "success"
+    }, 200);
 }

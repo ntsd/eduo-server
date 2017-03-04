@@ -19,7 +19,7 @@ env(__dirname + '/.env');
 _mongoose.Promise = global.Promise;
 
 //show log
-_mongoose.set('debug', true);
+//_mongoose.set('debug', true);
 
 // The database mapping.
 const dbs = { };
