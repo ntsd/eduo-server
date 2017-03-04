@@ -17,17 +17,19 @@ function* create(req, res) {
 }
 
 function* update(req, res) {
-    yield CourseService.update(req.params.id, req.body);
-    res.json({msg: "success"}, 200);
+    const course = yield CourseService.update(req.params.id, req.body);
+    if (course.error) res.json({"msg": "not found"}, 404);
+    res.json({msg: "update success"}, 200);
 }
 
 function* getSingle(req, res) {
-    res.json(yield CourseService.getSingle(req.params.id));
+    const course = yield CourseService.getSingle(req.params.id);
+    if (course.error) res.json({"msg": "not found"}, 404);
+    res.json(course, 200);
 }
 
 function* deleteSingle(req, res) {
-    yield CourseService.deleteSingle(req.params.id);
-    res.json({
-        "msg": "success"
-    }, 200);
+    const course = yield CourseService.deleteSingle(req.params.id);
+    if (course.error) res.json({"msg": "not found"}, 404);
+    res.json({"msg": "delete success"}, 200);
 }

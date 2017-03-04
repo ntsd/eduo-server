@@ -12,8 +12,6 @@ const Course = models.Course;
 
 const _ = require('lodash');
 
-const errors = require('common-errors');
-
 module.exports = {
     create,
     update,
@@ -53,22 +51,29 @@ function* create(entity) {
 }
 
 function* update(id, entity){
-    const course = yield Course.findOne({_id: id});
-    if (!course) {
-        throw new errors.NotFoundError('Mission not found');
+    try{
+        const course = yield Course.findOne({_id: id});
+        _.extend(course, entity);
+        yield course.save();
+        return course.toObject();
     }
-    _.extend(course, entity);
-    yield course.save();
-    return course.toObject();
+    catch(e){
+        return {
+            error: true,
+        };
+    }
 }
 
 function* getSingle(id) {
-    const course = yield Course.findOne({_id: id});
-    if (!course) {
-        throw new errors.NotFoundError(`dont' have course , id = ${id}`);
+    try {
+        const course = yield Course.findOne({_id: id});
+        return course.toObject();
+    } catch (e) {
+        return {
+            error: true,
+        };
     }
-    console.log(course.error)
-    return course.toObject();
+
 }
 
 function* getAll() {
@@ -76,10 +81,13 @@ function* getAll() {
 }
 
 function* deleteSingle(id) {
-    const course = yield Course.findOne({_id: id});
-    if (!course) {
-        throw new errors.NotFoundError(`Current logged in provider does not have this drone , id = ${id}`);
+    try{
+        const course = yield Course.findOne({_id: id});
+        yield course.remove();
     }
-
-    yield course.remove();
+    catch(e){
+        return {
+            error: true,
+        };
+    }
 }

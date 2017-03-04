@@ -12,14 +12,16 @@ const Institute = models.Institute;
 
 const _ = require('lodash');
 
-const errors = require('common-errors');
-
 function* getSingle(id){
-    const institute = yield Institute.findOne({_id: id});
-    if (!institute) {
-        throw new errors.NotFoundError(`dont' have institute , id = ${id}`);
+    try {
+        const institute = yield Institute.findOne({_id: id});
+        return institute.toObject();
     }
-    return institute.toObject();
+    catch(e){
+        return {
+            error: true,
+        };
+    }
 }
 
 function* create(entity){
@@ -28,21 +30,29 @@ function* create(entity){
 }
 
 function* update(id, entity){
-    const institute = yield Institute.findOne({_id: id});
-    if (!institute) {
-        throw new errors.NotFoundError('Mission not found');
+    try {
+        const institute = yield Institute.findOne({_id: id});
+        _.extend(institute, entity);
+        yield institute.save();
+        return institute.toObject();
     }
-    _.extend(institute, entity);
-    yield institute.save();
-    return institute.toObject();
+    catch(e){
+        return {
+            error: true,
+        };
+    }
 }
 
 function* deleteSingle(id) {
-    const institute = yield Institute.findOne({_id: id});
-    if (!institute) {
-        throw new errors.NotFoundError(`Does not have this institute , id = ${id}`);
+    try{
+        const institute = yield Institute.findOne({_id: id});
+        yield institute.remove();
     }
-    yield institute.remove();
+    catch(e){
+        return {
+            error: true,
+        };
+    }
 }
 
 module.exports = {

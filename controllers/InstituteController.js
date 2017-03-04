@@ -15,13 +15,19 @@ function* create(req, res) {
 }
 
 function* update(req, res) {
-    res.json(yield InstituteService.update(req.params.id, req.body));
+    const institute = yield InstituteService.update(req.params.id, req.body);
+    if (institute.error) res.json({"msg": "not found"}, 404);
+    res.json({"msg": "update success"}, 200);
 }
 
 function* getSingle(req, res) {
-    res.json(yield InstituteService.getSingle(req.params.id));
+    const institute = yield InstituteService.getSingle(req.params.id);
+    if (institute.error) res.json({"msg": "not found"}, 404);
+    res.json(institute, 200);
 }
 
 function* deleteSingle(req, res) {
-    res.json(yield InstituteService.deleteSingle(req.params.id), 204);
+    const institute = yield InstituteService.deleteSingle(req.params.id);
+    if (institute.error) res.json({"msg": "not found"}, 404);
+    res.json({"msg": "delete success"}, 200);
 }
