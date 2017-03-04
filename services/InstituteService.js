@@ -35,10 +35,18 @@ function* update(id, entity){
     return institute.toObject();
 }
 
+function* deleteSingle(id) {
+    const institute = yield Institute.findOne({_id: id});
+    if (!institute) {
+        throw new errors.NotFoundError(`Does not have this institute , id = ${id}`);
+    }
+    yield institute.remove();
+}
+
 module.exports = {
     getSingle,
     create,
     update,
-
+    deleteSingle
 };
 

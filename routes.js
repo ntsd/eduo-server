@@ -32,6 +32,7 @@ module.exports = {
     '/reset-password': {
         post: {
             controller: 'UserController',
+            middleware: [auth()],
             method: 'resetPassword'
         },
     },
@@ -39,6 +40,16 @@ module.exports = {
         get: {
             controller: 'CourseController',
             method: 'getSingle'
+        },
+        put: {
+            controller: 'CourseController',
+            method: 'update',
+            middleware: [auth()],
+        },
+        delete: {
+            controller: 'CourseController',
+            method: 'delete',
+            middleware: [auth()],
         }
     },
     '/course/create': {
@@ -48,30 +59,26 @@ module.exports = {
             middleware: [auth()],
         }
     },
-    '/course/update': {
-        get: {
-            controller: 'CourseController',
-            method: 'update',
-            middleware: [auth()],
-        }
-    },
     '/institute/:id': {
         get: {
             controller: 'InstituteController',
             method: 'getSingle'
+        },
+        put: {
+            controller: 'InstituteController',
+            method: 'update',
+            middleware: [auth()],
+        },
+        delete: {
+            controller: 'InstituteController',
+            method: 'delete',
+            middleware: [auth()],
         }
     },
     '/institute/create': {
         get: {
             controller: 'InstituteController',
             method: 'create',
-            middleware: [auth()],
-        }
-    },
-    '/Institute/update': {
-        get: {
-            controller: 'InstituteController',
-            method: 'update',
             middleware: [auth()],
         }
     }

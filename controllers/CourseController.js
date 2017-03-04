@@ -9,6 +9,7 @@ module.exports = {
     create,
     update,
     getSingle,
+    deleteSingle
 };
 
 function* create(req, res) {
@@ -21,4 +22,8 @@ function* update(req, res) {
 
 function* getSingle(req, res) {
     res.json(yield CourseService.getSingle(req.params.id));
+}
+
+function* deleteSingle(req, res) {
+    res.json(yield CourseService.deleteSingle(req.params.id), 204);
 }

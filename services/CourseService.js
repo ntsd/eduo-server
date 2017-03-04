@@ -16,7 +16,8 @@ module.exports = {
     create,
     update,
     getAll,
-    getSingle
+    getSingle,
+    deleteSingle
 };
 
 const courseCreatorUpdateEntityJoi = joi.object().keys({
@@ -69,4 +70,13 @@ function* getSingle(id) {
 
 function* getAll() {
 
+}
+
+function* deleteSingle(providerId, id) {
+    const course = yield Course.findOne({_id: id});
+    if (!course) {
+        throw new errors.NotFoundError(`Current logged in provider does not have this drone , id = ${id}`);
+    }
+
+    yield course.remove();
 }
