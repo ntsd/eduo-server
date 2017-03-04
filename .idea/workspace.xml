@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5f2294b-5106-453d-a88b-2c5e6d2a38c4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/CourseController.js" afterPath="$PROJECT_DIR$/controllers/CourseController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/datasource.js" afterPath="$PROJECT_DIR$/datasource.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generate-test-data.js" afterPath="$PROJECT_DIR$/generate-test-data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes.js" afterPath="$PROJECT_DIR$/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/CourseService.js" afterPath="$PROJECT_DIR$/services/CourseService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/services/InstituteService.js" afterPath="$PROJECT_DIR$/services/InstituteService.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,11 +58,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CourseService.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CourseService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/CourseService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="67" column="29" lean-forward="true" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
+            <state relative-caret-position="221">
+              <caret line="59" column="29" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InstituteService.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/services/InstituteService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -85,7 +91,7 @@
       <file leaf-file-name="UserService.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/services/UserService.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
+            <state relative-caret-position="-1236">
               <caret line="155" column="56" lean-forward="false" selection-start-line="155" selection-start-column="51" selection-end-line="155" selection-end-column="56" />
               <folding />
             </state>
@@ -107,16 +113,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-34">
               <caret line="49" column="46" lean-forward="true" selection-start-line="49" selection-start-column="46" selection-end-line="49" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Auth.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/common/Auth.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="24" column="27" lean-forward="true" selection-start-line="24" selection-start-column="27" selection-end-line="24" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -179,7 +175,6 @@
         <option value="$PROJECT_DIR$/data/coursesGenerator" />
         <option value="$PROJECT_DIR$/services/UserService.js" />
         <option value="$PROJECT_DIR$/models/Course.js" />
-        <option value="$PROJECT_DIR$/services/InstituteService.js" />
         <option value="$PROJECT_DIR$/controllers/InstituteController.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/generate-test-data.js" />
@@ -188,6 +183,7 @@
         <option value="$PROJECT_DIR$/common/Auth.js" />
         <option value="$PROJECT_DIR$/controllers/CourseController.js" />
         <option value="$PROJECT_DIR$/datasource.js" />
+        <option value="$PROJECT_DIR$/services/InstituteService.js" />
         <option value="$PROJECT_DIR$/services/CourseService.js" />
       </list>
     </option>
@@ -858,16 +854,16 @@
       <workItem from="1488342123977" duration="697000" />
       <workItem from="1488416030496" duration="715000" />
       <workItem from="1488583110281" duration="1061000" />
-      <workItem from="1488599167124" duration="3508000" />
+      <workItem from="1488599167124" duration="3656000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147938000" />
+    <option name="totallyTimeSpent" value="148086000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -878,7 +874,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3133117" sideWeight="0.52462685" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31230283" sideWeight="0.47537315" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31230283" sideWeight="0.47537315" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1130,17 +1126,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/InstituteService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="23" lean-forward="false" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
-          <folding>
-            <marker date="1488599665420" expanded="true" signature="911:1003" ph="{...}" />
-            <marker date="1488599665420" expanded="true" signature="1054:1113" ph="{&quot;getSingle&quot;: getSingle...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
@@ -1213,22 +1198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/services/UserService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="155" column="56" lean-forward="false" selection-start-line="155" selection-start-column="51" selection-end-line="155" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/services/MailService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/Course.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -1277,10 +1246,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/services/MailService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="19" lean-forward="false" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/UserService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1236">
+          <caret line="155" column="56" lean-forward="false" selection-start-line="155" selection-start-column="51" selection-end-line="155" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/services/CourseService.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="67" column="29" lean-forward="true" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
+        <state relative-caret-position="221">
+          <caret line="59" column="29" lean-forward="false" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/services/InstituteService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="14" column="40" lean-forward="false" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
           <folding />
         </state>
       </provider>

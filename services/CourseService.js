@@ -12,6 +12,8 @@ const Course = models.Course;
 
 const _ = require('lodash');
 
+const errors = require('common-errors');
+
 module.exports = {
     create,
     update,
@@ -73,7 +75,7 @@ function* getAll() {
 
 }
 
-function* deleteSingle(providerId, id) {
+function* deleteSingle(id) {
     const course = yield Course.findOne({_id: id});
     if (!course) {
         throw new errors.NotFoundError(`Current logged in provider does not have this drone , id = ${id}`);

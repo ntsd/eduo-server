@@ -12,6 +12,8 @@ const Institute = models.Institute;
 
 const _ = require('lodash');
 
+const errors = require('common-errors');
+
 function* getSingle(id){
     const institute = yield Institute.findOne({_id: id});
     if (!institute) {
