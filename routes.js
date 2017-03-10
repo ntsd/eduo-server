@@ -59,6 +59,13 @@ module.exports = {
             middleware: [auth()],
         }
     },
+    '/course/search': {
+        get: {
+            controller: 'CourseController',
+            method: 'searchCourse',
+            middleware: [],
+        }
+    },
     '/institute/:id': {
         get: {
             controller: 'InstituteController',

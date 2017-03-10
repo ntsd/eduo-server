@@ -17,7 +17,8 @@ module.exports = {
     update,
     getAll,
     getSingle,
-    deleteSingle
+    deleteSingle,
+    search
 };
 
 const courseCreatorUpdateEntityJoi = joi.object().keys({
@@ -90,4 +91,19 @@ function* deleteSingle(id) {
             error: true,
         };
     }
+}
+
+function* search(text, number){
+    var regex = new RegExp(text);
+    yield  Course.find({$text: {$search: regex}})
+        .limit(number)
+        .exec(function(err, docs) {
+            if(err){
+                return {
+                    error: true,
+                };
+            }
+            return docs;
+
+        });
 }

@@ -9,7 +9,8 @@ module.exports = {
     create,
     update,
     getSingle,
-    deleteSingle
+    deleteSingle,
+    searchCourse
 };
 
 function* create(req, res) {
@@ -32,4 +33,10 @@ function* deleteSingle(req, res) {
     const course = yield CourseService.deleteSingle(req.params.id);
     if (course.error) res.json({"msg": "not found"}, 404);
     else res.json({"msg": "delete success"}, 200);
+}
+
+function* searchCourse(req, res) {
+    const course = yield CourseService.search(req.params.text, req.params.number);
+    if (course.error) res.json({"msg": "not found"}, 404);
+    else res.json(course, 200);
 }
