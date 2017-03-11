@@ -93,17 +93,22 @@ function* deleteSingle(id) {
     }
 }
 
-function* search(text, number){
-    var regex = new RegExp(text);
-    yield  Course.find({$text: {$search: regex}})
-        .limit(number)
-        .exec(function(err, docs) {
-            if(err){
-                return {
-                    error: true,
-                };
-            }
-            return docs;
-
+function* search(text){
+    try{
+        var courses = Course.find({$text: {$search: text}})
+            .limit(10);
+        courses.exec(function(err,courses){
+            if(err)
+                return err;
+            return courses;
         });
+        console.log(courses);
+        yield courses;
+
+    }
+        catch(e){
+            return {
+                error: true,
+            };
+    }
 }

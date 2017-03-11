@@ -4,6 +4,9 @@
 'use strict';
 
 const CourseService = require('../services/CourseService');
+const models = require('../models');
+
+const Course = models.Course;
 
 module.exports = {
     create,
@@ -25,7 +28,7 @@ function* update(req, res) {
 
 function* getSingle(req, res) {
     const course = yield CourseService.getSingle(req.params.id);
-    if (course.error) res.json({"msg": "not found"}, 404);
+    if (course.error) res.json({"msg": "Course not found"}, 404);
     else res.json(course, 200);
 }
 
@@ -36,7 +39,18 @@ function* deleteSingle(req, res) {
 }
 
 function* searchCourse(req, res) {
-    const course = yield CourseService.search(req.params.text, req.params.number);
-    if (course.error) res.json({"msg": "not found"}, 404);
-    else res.json(course, 200);
+    var text = req.param('text');
+    try{
+        var courses = Course.find({$text: {$search: text}})
+            .limit(10);
+        courses.exec(function(err,courses){
+            if(err)
+                return res.json({"msg": "Search not found"}, 404);
+            res.json(courses, 200);
+        });
+
+    }
+    catch(e){
+        return res.json({"msg": "error"}, 404);
+    }
 }
