@@ -82,7 +82,7 @@ module.exports = {
         }
     },
     '/institute/create': {
-        get: {
+        post: {
             controller: 'InstituteController',
             method: 'create',
             middleware: [auth()],

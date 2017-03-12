@@ -1,0 +1,166 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Eduo",
+		"_postman_id": "c2498a2b-7ddc-2cf9-cee4-d9a4e1d3477b",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Institude-service",
+			"description": "",
+			"item": [
+				{
+					"name": "Get 1 Institude",
+					"request": {
+						"url": "http://127.0.0.1:3500/api/v1/institute/58c28b81a2a11f0e8cad1ae1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Post Institude Create",
+					"request": {
+						"url": "http://127.0.0.1:3500/api/v1/institute/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OGMyOGI4MWEyYTExZjBlOGNhZDFiNGUiLCJpYXQiOjE0ODkyODI5NDEsImV4cCI6MTQ4OTMxODk0MSwiYXVkIjoiaDdwNlY5M1NoYXUzU1N2cUdybDZWNHhyQVRsa3JWR20ifQ.qqXiSZlpyZ95AfUujfz9fanjAX4RZRwSuFvjVqLmo8I",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"ggggggg\",\n\t\"location\":{\"lat\":\"10.9525\",\"lng\":\"125.03167\"}\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "course-service",
+			"description": "",
+			"item": [
+				{
+					"name": "Search Course",
+					"request": {
+						"url": "http://127.0.0.1:3500/api/v1/coursesearch=description",
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OGMyOGI4MWEyYTExZjBlOGNhZDFiNGUiLCJpYXQiOjE0ODkxNjUwMDAsImV4cCI6MTQ4OTIwMTAwMCwiYXVkIjoiaDdwNlY5M1NoYXUzU1N2cUdybDZWNHhyQVRsa3JWR20ifQ.7z7OIB22iIoISUMNB-Rz534xxYdrXmz46u-5Eha6sxM",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"Course kuy\",\r\n    \"description\": \"description\",\r\n    \"hour\": 4,\r\n    \"price\": 1602.4834,\r\n    \"startDate\": \"2015-04-24T10:44:24\",\r\n    \"endDate\": \"2015-04-29T12:28:27\",\r\n    \"email\": \"wongstout@geekko.com\",\r\n    \"courseTime\": \"10:55\",\r\n    \"promotion_price\": 2065,\r\n    \"rating\": 1.7623,\r\n    \"address\": \"Address\",\r\n    \"website\": \"www.google.com\",\r\n    \"phone\": \"080-00000000\"\r\n }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get 1 Course",
+					"request": {
+						"url": "http://127.0.0.1:3500/api/v1/course/58c28b81a2a11f0e8cad1b45",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Create Course",
+					"request": {
+						"url": "http://127.0.0.1:3500/api/v1/course/create",
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OGMyOGI4MWEyYTExZjBlOGNhZDFiNGUiLCJpYXQiOjE0ODkyODIyNjcsImV4cCI6MTQ4OTMxODI2NywiYXVkIjoiaDdwNlY5M1NoYXUzU1N2cUdybDZWNHhyQVRsa3JWR20ifQ.w8Vdr4aouarsIPpwLaG-fSG0ia806LO1d8ctoq74LwE",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subject\": \"Course 555\",\r\n    \"description\": \"description\",\r\n    \"hour\": 10,\r\n    \"price\": 1059.2442,\r\n    \"startDate\": \"2017-02-06T02:25:15\",\r\n    \"endDate\": \"2014-02-09T02:44:21\",\r\n    \"email\": \"lourdesstout@geekko.com\",\r\n    \"courseTime\": \"10:55\",\r\n    \"promotion_price\": 3850,\r\n    \"rating\": 1.0721,\r\n    \"address\": \"Address\",\r\n    \"website\": \"www.google.com\",\r\n    \"phone\": \"080-00000000\"\r\n  }"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user-service",
+			"description": "",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"url": "http://127.0.0.1:3500/api/v1/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"faycarey@geekfarm.com\",\n\t\"password\" : \"ntsd\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"url": "http://127.0.0.1:3500/api/v1/register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"User\",\r\n    \"firstName\": \"user\",\r\n    \"lastName\": \"user\",\r\n    \"email\": \"email@gmail.com\",\r\n    \"password\": \"password\",\r\n    \"avatarUrl\": \"img/thumbnail.png\",\r\n    \"phone\": \"+1 123-1234-123\",\r\n    \"role\": \"student\",\r\n    \"address\": {\r\n      \"coordinates\": [\r\n        73,\r\n        56\r\n      ],\r\n      \"line1\": \"Address 1\",\r\n      \"city\": \"City 1\",\r\n      \"postalCode\": \"10000\",\r\n      \"state\": \"state\",\r\n      \"primary\": true\r\n    }\r\n  }"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
