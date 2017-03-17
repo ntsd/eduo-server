@@ -13,7 +13,8 @@ module.exports = {
     update,
     getSingle,
     deleteSingle,
-    searchCourse
+    searchCourse,
+    getCourses
 };
 
 function* create(req, res) {
@@ -43,6 +44,28 @@ function* searchCourse(req, res) {
     try{
         var courses = Course.find({$text: {$search: text}})
             .limit(10);
+        courses.exec(function(err,courses){
+            if(err)
+                return res.json({"msg": "Search not found"}, 404);
+            res.json(courses, 200);
+        });
+
+    }
+    catch(e){
+        return res.json({"msg": "error"}, 404);
+    }
+}
+
+function* getCourses(req, res) {
+    const tag = req.param('tag') || '';
+    const limit = parseInt(req.param('limit')) || 10;
+    const page = parseInt(req.param('page')) || 0;
+    console.log(page,tag,limit,page*limit);
+    try{
+        const courses = Course.find({tags: tag})
+            .skip(page*limit)
+            .limit(limit)
+            .sort( {'createdAt':-1});
         courses.exec(function(err,courses){
             if(err)
                 return res.json({"msg": "Search not found"}, 404);

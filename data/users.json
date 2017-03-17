@@ -40,5 +40,26 @@
       "state": "state",
       "primary": true
     }
+  },
+  {
+    "username": "Goodman",
+    "firstName": "Rhodes",
+    "lastName": "Frank",
+    "email": "user@gmail.com",
+    "password": "user",
+    "avatarUrl": "img/thumbnail.png",
+    "phone": "+1 123-1234-123",
+    "role": "student",
+    "address": {
+      "coordinates": [
+        73,
+        56
+      ],
+      "line1": "Address 1",
+      "city": "City 1",
+      "postalCode": "10000",
+      "state": "state",
+      "primary": true
+    }
   }
 ]

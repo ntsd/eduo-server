@@ -41,12 +41,12 @@ if (!CourseSchema.options.toObject) {
 }
 
 CourseSchema.options.toObject.transform = function (doc, ret, options) {
-    const sanitized = _.omit(ret);
+    const sanitized = _.omit(ret, '__v', '_id', 'createdAt', 'updatedAt');
     sanitized.id = doc._id;
     return sanitized;
 };
 
-CourseSchema.index({ tags: 'text', subject: 'text', description: 'text', teacher: 'text' });
+CourseSchema.index({ subject: 'text', description: 'text', teacher: 'text' });
 
 module.exports = {
     CourseSchema,

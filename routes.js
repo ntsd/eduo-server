@@ -35,6 +35,11 @@ module.exports = {
             middleware: [auth()],
             method: 'resetPassword'
         },
+    },'/course': {
+        get: {
+            controller: 'CourseController',
+            method: 'getCourses'
+        }
     },
     '/course/:id': {
         get: {

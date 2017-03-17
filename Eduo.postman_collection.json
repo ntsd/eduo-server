@@ -56,12 +56,12 @@
 				{
 					"name": "Search Course",
 					"request": {
-						"url": "http://127.0.0.1:3500/api/v1/coursesearch=description",
+						"url": "http://127.0.0.1:3500/api/v1/coursesearch?text=math",
 						"method": "GET",
 						"header": [
 							{
 								"key": "authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OGMyOGI4MWEyYTExZjBlOGNhZDFiNGUiLCJpYXQiOjE0ODkxNjUwMDAsImV4cCI6MTQ4OTIwMTAwMCwiYXVkIjoiaDdwNlY5M1NoYXUzU1N2cUdybDZWNHhyQVRsa3JWR20ifQ.7z7OIB22iIoISUMNB-Rz534xxYdrXmz46u-5Eha6sxM",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OGMyOGI4MWEyYTExZjBlOGNhZDFiNGUiLCJpYXQiOjE0ODk3MzkzOTgsImV4cCI6MTQ4OTc3NTM5OH0.H-iqGIkWIc1y5cI4Fm1kU2CcT092NkXhAWjL2GBvhjA",
 								"description": ""
 							},
 							{
@@ -113,6 +113,17 @@
 						"description": ""
 					},
 					"response": []
+				},
+				{
+					"name": "getCourses",
+					"request": {
+						"url": "http://127.0.0.1:3500/api/v1/course?tag=math&limit=2&page=0",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": "get courses \nparam limit, page, tag"
+					},
+					"response": []
 				}
 			]
 		},
@@ -134,7 +145,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\":\"faycarey@geekfarm.com\",\n\t\"password\" : \"ntsd\"\n}"
+							"raw": "{\n\t\"email\":\"user@gmail.com\",\n\t\"password\" : \"user\"\n}"
 						},
 						"description": ""
 					},
