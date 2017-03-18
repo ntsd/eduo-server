@@ -40,7 +40,7 @@ function* deleteSingle(req, res) {
 }
 
 function* searchCourse(req, res) {
-    var text = req.params.text;
+    var text = req.query.text;
     try{
         var courses = Course.find({$text: {$search: text}})
             .limit(10);
