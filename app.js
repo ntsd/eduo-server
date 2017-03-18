@@ -22,7 +22,7 @@ const io = require('socket.io')(http);
 app.set('port', config.PORT);
 
 app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({extended: true})); //If Encode Can't test with postman
+app.use(bodyParser.urlencoded({extended: false})); //If Encode Can't test with postman
 app.use(cors());
 const apiRouter = express.Router();
 
