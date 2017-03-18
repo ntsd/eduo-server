@@ -1,18 +1,13 @@
-/**
- * Created by Jiravat on 3/2/2560.
- */
 'use strict';
 
 const mongoose = require('../datasource').getMongoose();
 const _ = require('lodash');
 const timestamps = require('mongoose-timestamp');
+const Address = require('./Address').AddressSchema;
 
 const InstituteSchema = new mongoose.Schema({
     name: {type:String, require:true},
-    location : {
-        lat: { type: Number},
-        lng: { type: Number}
-    },
+    address: {type: Address}
 });
 
 InstituteSchema.plugin(timestamps);

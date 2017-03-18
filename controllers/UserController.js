@@ -1,15 +1,8 @@
 /**
  * Created by Jiravat on 16/2/2560.
  */
-'use strict';
 
-/**
- * Exposes the API's to manipulate users in the system
- * This includes auth, social auth and register
- *
- * @author      TCSCODER
- * @version     1.0
- */
+'use strict';
 
 const UserService = require('../services/UserService');
 

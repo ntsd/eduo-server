@@ -1,18 +1,13 @@
-/**
- * Created by Jiravat on 3/2/2560.
- */
 'use strict';
 
 const _ = require('lodash');
 const mongoose = require('../datasource').getMongoose();
 const timestamps = require('mongoose-timestamp');
 const ObjectId = mongoose.Schema.Types.ObjectId;
-
+const Address = require('./Address').AddressSchema;
 
 
 const CourseSchema = new mongoose.Schema({
-    // format [longitude, latitude]
-    // needed for $near query https://docs.mongodb.com/manual/reference/operator/query/near/
     subject: {type: String, required: true},
     description: {type: String, required: false},
     hour : {type: Number},
@@ -25,7 +20,7 @@ const CourseSchema = new mongoose.Schema({
     study_times: {type:Number},
     promotion_price: {type: Number},
     rating: {type: Number},
-    address: {type: String},
+    address: {type: Address},
     website: {type: String},
     phone: {type: String},
     tags: {type:Object},
