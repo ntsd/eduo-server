@@ -40,7 +40,7 @@ function* deleteSingle(req, res) {
 }
 
 function* searchCourse(req, res) {
-    var text = req.param('text');
+    var text = req.params.text;
     try{
         var courses = Course.find({$text: {$search: text}})
             .limit(10);
@@ -57,12 +57,11 @@ function* searchCourse(req, res) {
 }
 
 function* getCourses(req, res) {
-    const tag = req.param('tag') || '';
-    const limit = parseInt(req.param('limit')) || 10;
-    const page = parseInt(req.param('page')) || 0;
-    console.log(page,tag,limit,page*limit);
+    const tags = req.query.tags || '';
+    const limit = parseInt(req.query.limit) || 10;
+    const page = parseInt(req.query.page) || 0;
     try{
-        const courses = Course.find({tags: tag})
+        const courses = Course.find({tags})
             .skip(page*limit)
             .limit(limit)
             .sort( {'createdAt':-1});
