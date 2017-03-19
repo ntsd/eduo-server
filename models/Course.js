@@ -12,7 +12,7 @@ const CourseSchema = new mongoose.Schema({
     description: {type: String, required: false},
     hour : {type: Number},
     price: {type: Number, required: false},
-    teacher: [{type: ObjectId, required: false, ref:'User'}],
+    teacher: [{type: String, required: false}],
     startDate: {type: Date, required: false},
     endDate: {type: Date, required: false},
     email : {type: String, required: false},
@@ -25,8 +25,9 @@ const CourseSchema = new mongoose.Schema({
     phone: {type: String},
     tags: {type:Object},
     images: {type:String},
-    institute: {type: ObjectId, ref:'Institute'}
-
+    institute: {type: ObjectId, ref:'Institute'},
+    createBy: {type: ObjectId, required: true, ref:'User'},
+    reviews: [{type: ObjectId, ref:'Review'}]
 });
 
 CourseSchema.plugin(timestamps);

@@ -20,7 +20,7 @@ if (!ReviewSchema.options.toObject) {
 }
 
 
-ReviewSchema.options.toObject.transform = function (doc, ret, options) { // eslint-disable-line no-unused-vars
+ReviewSchema.options.toObject.transform = function (doc, ret) { // eslint-disable-line no-unused-vars
     const sanitized = _.omit(ret, '__v', '_id', 'createdAt', 'updatedAt');
     sanitized.id = doc._id;
     return sanitized;

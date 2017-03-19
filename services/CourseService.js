@@ -15,7 +15,6 @@ const _ = require('lodash');
 module.exports = {
     create,
     update,
-    getAll,
     getSingle,
     deleteSingle,
     search
@@ -48,6 +47,7 @@ create.schema = {
 
 function* create(entity) {
     const created = yield Course.create(entity);
+
     return created.toObject();
 }
 
@@ -77,9 +77,6 @@ function* getSingle(id) {
 
 }
 
-function* getAll() {
-
-}
 
 function* deleteSingle(id) {
     try{

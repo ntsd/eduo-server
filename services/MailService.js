@@ -17,7 +17,6 @@ const transporter = nodemailer.createTransport({
 });
 
 function* sendMessage(mailTo, html, text, subject) {
-    // setup e-mail data with unicode symbols
     const mailOptions = {
         from: config.mail.FROM_EMAIL, // sender address
         to: mailTo, // list of receivers
