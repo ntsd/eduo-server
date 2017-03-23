@@ -48,7 +48,7 @@ module.exports = {
         },
         put: {
             controller: 'CourseController',
-            method: 'update',
+            method: 'updateSingle',
             middleware: [auth()],
         },
         delete: {
