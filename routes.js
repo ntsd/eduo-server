@@ -92,6 +92,30 @@ module.exports = {
             method: 'create',
             middleware: [auth()],
         }
+    },
+    '/review/create/:id': {
+        post: {
+            controller: 'ReviewController',
+            method: 'createSingle',
+            middleware: [auth()],
+        }
+    },
+    '/review/:id': {
+        get: {
+            controller: 'ReviewController',
+            method: 'getSingle',
+            middleware: [auth()],
+        },
+        put:{
+            controller: 'ReviewController',
+            method: 'updateSingle',
+            middleware: [auth()],
+        },
+        delete:{
+            controller: 'ReviewController',
+            method: 'deleteSingle',
+            middleware: [auth()],
+        }
     }
 
     // '/login/social': {

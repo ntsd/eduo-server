@@ -5,26 +5,30 @@ const mongoose = require('../datasource').getMongoose();
 const timestamps = require('mongoose-timestamp');
 const ObjectId = mongoose.Schema.Types.ObjectId;
 const Address = require('./Address').AddressSchema;
-
+const enums = require('../enum');
 
 const CourseSchema = new mongoose.Schema({
-    subject: {type: String, required: true},
+    name: {type:String, require:true},
+    subject: {type: String},
     description: {type: String, required: false},
-    hour : {type: Number},
     price: {type: Number, required: false},
     teacher: [{type: String, required: false}],
     startDate: {type: Date, required: false},
     endDate: {type: Date, required: false},
     email : {type: String, required: false},
-    courseTime: {type: String, require: false},
-    study_times: {type:Number},
-    promotion_price: {type: Number},
+    daysOfWeek: [{type: String, require: false, enum: _.values(enums.Days)}],
+    startTimeHour: {type:Number},
+    startTimeMinute: {type:Number},
+    hourPerDay: {type:Number},
+    studyTimes: {type:Number},
+    promotionPrice: {type: Number},
     rating: {type: Number},
     address: {type: Address},
     website: {type: String},
     phone: {type: String},
-    tags: {type:Object},
-    images: {type:String},
+    tags: {type:[String]},
+    images: {type:[String]},
+    coverImage: {type:String},
     institute: {type: ObjectId, ref:'Institute'},
     createBy: {type: ObjectId, required: true, ref:'User'},
     reviews: [{type: ObjectId, ref:'Review'}]

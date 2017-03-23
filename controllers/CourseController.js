@@ -10,7 +10,7 @@ const Course = models.Course;
 
 module.exports = {
     create,
-    update,
+    updateSingle,
     getSingle,
     deleteSingle,
     searchCourse,
@@ -21,7 +21,7 @@ function* create(req, res) {
     res.json(yield CourseService.create(req.body));
 }
 
-function* update(req, res) {
+function* updateSingle(req, res) {
     const course = yield CourseService.update(req.params.id, req.body);
     if (course.error) res.json({"msg": "not found"}, 404);
     else res.json({msg: "update success"}, 200);

@@ -9,8 +9,7 @@ const Schema = mongoose.Schema;
 const ReviewSchema = new mongoose.Schema({
     userId: {type: Schema.Types.ObjectId, required: true, ref: 'User' },
     comment: {type:String, require:true},
-    star: {type:Number},
-    email: {type:String}
+    rating: {type:Number}
 });
 
 ReviewSchema.plugin(timestamps);

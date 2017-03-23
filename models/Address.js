@@ -5,14 +5,14 @@ const timestamps = require('mongoose-timestamp');
 const _ = require('lodash');
 
 const AddressSchema = new mongoose.Schema({
-    location : { lat: { type: Number},
-        lng: { type: Number}},
+    //[lat,lng]
+    coordinates: {type: [Number], required: true, index: '2dsphere'},
     line1: {type: String, required: true},
     line2: {type: String, required: false},
-    city: {type: String, required: true},
-    country: {type: String, required: true},
-    postalCode: {type: String, required: true},
-    primary: {type: Boolean, required: true},
+    city: {type: String, required: false},
+    country: {type: String, required: false},
+    postalCode: {type: String, required: false},
+    private: {type: Boolean, required: false, default: false},
 });
 
 AddressSchema.plugin(timestamps);

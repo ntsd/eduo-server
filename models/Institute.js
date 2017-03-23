@@ -2,15 +2,16 @@
 
 const mongoose = require('../datasource').getMongoose();
 const _ = require('lodash');
-const timestamps = require('mongoose-timestamp');
+//const timestamps = require('mongoose-timestamp');
 const Address = require('./Address').AddressSchema;
+const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const InstituteSchema = new mongoose.Schema({
     name: {type:String, require:true},
-    address: {type: Address}
+    address: {type: Address},
+    createBy: {type: ObjectId, required: true, ref:'User'},
+    coverImage: {type: String}
 });
-
-InstituteSchema.plugin(timestamps);
 
 if (!InstituteSchema.options.toObject) {
     InstituteSchema.options.toObject = {};
