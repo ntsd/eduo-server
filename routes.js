@@ -93,7 +93,7 @@ module.exports = {
             middleware: [auth()],
         }
     },
-    '/review/create/:id': {
+    '/review/create/:courseid': {
         post: {
             controller: 'ReviewController',
             method: 'createSingle',
@@ -104,7 +104,6 @@ module.exports = {
         get: {
             controller: 'ReviewController',
             method: 'getSingle',
-            middleware: [auth()],
         },
         put:{
             controller: 'ReviewController',

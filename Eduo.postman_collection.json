@@ -14,7 +14,7 @@
 				{
 					"name": "Get 1 Institude",
 					"request": {
-						"url": "http://127.0.0.1:3500/api/v1/institute/58c28b81a2a11f0e8cad1ae1",
+						"url": "http://127.0.0.1:3500/api/v1/institute/58d3ec7a9b90f013a0a44f5c",
 						"method": "GET",
 						"header": [],
 						"body": {},
@@ -35,13 +35,13 @@
 							},
 							{
 								"key": "authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OGMyOGI4MWEyYTExZjBlOGNhZDFiNGUiLCJpYXQiOjE0ODkyODI5NDEsImV4cCI6MTQ4OTMxODk0MSwiYXVkIjoiaDdwNlY5M1NoYXUzU1N2cUdybDZWNHhyQVRsa3JWR20ifQ.qqXiSZlpyZ95AfUujfz9fanjAX4RZRwSuFvjVqLmo8I",
+								"value": "Bearer {{token}}",
 								"description": ""
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\":\"ggggggg\",\n\t\"location\":{\"lat\":\"10.9525\",\"lng\":\"125.03167\"}\n}"
+							"raw": "{\r\n  \"name\": \"KMITL Inc.\",\r\n  \"coverImage\": \"http://dummyimage.com/228x239.png/5fa2dd/ffffff\",\r\n  \"address\": {\r\n    \"coordinates\": [\r\n      150,\r\n      42\r\n    ],\r\n    \"line1\": \"KMITL\",\r\n    \"line2\": \"Ladkrabang\",\r\n    \"city\": \"Bangkok\",\r\n    \"country\": \"Thailand\"\r\n  }\r\n}"
 						},
 						"description": ""
 					},
@@ -61,7 +61,7 @@
 						"header": [
 							{
 								"key": "authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OGMyOGI4MWEyYTExZjBlOGNhZDFiNGUiLCJpYXQiOjE0ODk3MzkzOTgsImV4cCI6MTQ4OTc3NTM5OH0.H-iqGIkWIc1y5cI4Fm1kU2CcT092NkXhAWjL2GBvhjA",
+								"value": "Bearer {{token}}",
 								"description": ""
 							},
 							{
@@ -97,7 +97,7 @@
 						"header": [
 							{
 								"key": "authorization",
-								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OGMyOGI4MWEyYTExZjBlOGNhZDFiNGUiLCJpYXQiOjE0ODkyODIyNjcsImV4cCI6MTQ4OTMxODI2NywiYXVkIjoiaDdwNlY5M1NoYXUzU1N2cUdybDZWNHhyQVRsa3JWR20ifQ.w8Vdr4aouarsIPpwLaG-fSG0ia806LO1d8ctoq74LwE",
+								"value": "Bearer {{token}}",
 								"description": ""
 							},
 							{
@@ -108,7 +108,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"subject\": \"Course 555\",\r\n    \"description\": \"description\",\r\n    \"hour\": 10,\r\n    \"price\": 1059.2442,\r\n    \"startDate\": \"2017-02-06T02:25:15\",\r\n    \"endDate\": \"2014-02-09T02:44:21\",\r\n    \"email\": \"lourdesstout@geekko.com\",\r\n    \"courseTime\": \"10:55\",\r\n    \"promotion_price\": 3850,\r\n    \"rating\": 1.0721,\r\n    \"address\": \"Address\",\r\n    \"website\": \"www.google.com\",\r\n    \"phone\": \"080-00000000\"\r\n  }"
+							"raw": "{\r\n  \"name\": \"Course 10085d\",\r\n  \"subject\": \"English\",\r\n  \"description\": \"Description: 983292674778504161422681998221545681370685138755835844290585769644119193333\",\r\n  \"price\": 7028,\r\n  \"teacher\": [\r\n    \"teacher25\"\r\n  ],\r\n  \"startDate\": \"3/27/2017\",\r\n  \"endDate\": \"6/15/2017\",\r\n  \"email\": \"mbishop7@google.ru\",\r\n  \"daysOfWeek\": [\r\n    \"Sunday\"\r\n  ],\r\n  \"startTimeHour\": 8,\r\n  \"startTimeMinute\": 17,\r\n  \"hourPerDay\": 1,\r\n  \"studyTimes\": 47,\r\n  \"promotionPrice\": 70,\r\n  \"rating\": 5.0,\r\n  \"website\": \"irs.gov\",\r\n  \"tags\": [\r\n    \"Tag:56\"\r\n  ],\r\n  \"images\": \"http://dummyimage.com/108x197.png/5fa2dd/ffffff\",\r\n  \"coverImage\": \"http://dummyimage.com/187x245.bmp/ff4444/ffffff\",\r\n  \"address\": {\r\n    \"coordinates\": [\r\n      163,\r\n      9\r\n    ],\r\n    \"line1\": \"94 Novick Terrace\",\r\n    \"line2\": \"Meadow Vale\",\r\n    \"city\": \"Qinggou\",\r\n    \"country\": \"China\",\r\n    \"private\": true\r\n  }\r\n}"
 						},
 						"description": ""
 					},
@@ -117,11 +117,42 @@
 				{
 					"name": "getCourses",
 					"request": {
-						"url": "http://127.0.0.1:3500/api/v1/course?tag=math&limit=2&page=0",
+						"url": "http://127.0.0.1:3500/api/v1/course?subject=Math&limit=2&page=0",
 						"method": "GET",
 						"header": [],
 						"body": {},
 						"description": "get courses \nparam limit, page, tag"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "review-service",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Review",
+					"request": {
+						"url": "http://127.0.0.1:3500/api/v1/review/create/58d3ad78be5cdb08e40e74c3",
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer {{token}}",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"comment\": \"constitutions\",\r\n  \"rating\": 3.5\r\n}"
+						},
+						"description": ""
 					},
 					"response": []
 				}
@@ -133,6 +164,19 @@
 			"item": [
 				{
 					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"//postman.setEnvironmentVariable(\"token\", jsonData.accessToken);\r",
+									"postman.setGlobalVariable(\"token\", jsonData.accessToken);"
+								]
+							}
+						}
+					],
 					"request": {
 						"url": "http://127.0.0.1:3500/api/v1/login",
 						"method": "POST",

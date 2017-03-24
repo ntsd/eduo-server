@@ -18,6 +18,7 @@ module.exports = {
 };
 
 function* create(req, res) {
+    req.body.createBy = req.auth.sub;
     res.json(yield CourseService.create(req.body));
 }
 
@@ -57,11 +58,11 @@ function* searchCourse(req, res) {
 }
 
 function* getCourses(req, res) {
-    const tags = req.query.tags || '';
+    const subject = req.query.subject || '';
     const limit = parseInt(req.query.limit) || 10;
     const page = parseInt(req.query.page) || 0;
     try{
-        const courses = Course.find({tags})
+        const courses = Course.find({subject: subject})
             .skip(page*limit)
             .limit(limit)
             .sort( {'createdAt':-1});

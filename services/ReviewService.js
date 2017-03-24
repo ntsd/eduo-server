@@ -65,19 +65,18 @@ function* getAllByCourse(id, entity){
 function* addReview(courseId ,reviewEntity){//not done
     try{
         const review = yield create(reviewEntity);
-        //console.log(review.id, courseId);
         const course = yield Course.findById(courseId, function(err, course) {
             if (err) return console.log(err);
             course.reviews.push(review.id);
             course.save(function(err) {
                 if (err) return console.log(err);
-                //console.log({ status : 'done' });
             });
         });
         yield course.save();
-        return review.toObject();
+        return review;
     }
     catch(e){
+        console.log(e);
         return {
             error: true,
         };

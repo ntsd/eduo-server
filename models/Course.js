@@ -46,7 +46,7 @@ CourseSchema.options.toObject.transform = function (doc, ret, options) {
     return sanitized;
 };
 
-CourseSchema.index({ subject: 'text', description: 'text', teacher: 'text' });
+CourseSchema.index({subject: 'text',name:'text', description: 'text', teacher: 'text' });
 
 module.exports = {
     CourseSchema,

@@ -13,8 +13,9 @@ module.exports = {
 };
 
 function* createSingle(req, res) {
-
-    const review = yield ReviewService.addReview(req.params.id, req.body);
+    req.body.userId = req.auth.sub;
+    // console.log(req.body, req.params.courseid);
+    const review = yield ReviewService.addReview(req.params.courseid, req.body);
     if(review.error)res.json({"msg": "not create"}, 304);
     else{res.json({"msg": "create success"}, 201);}
 }

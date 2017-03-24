@@ -11,6 +11,8 @@ module.exports = {
 };
 
 function* create(req, res) {
+    //console.log(req.auth.sub);
+    req.body.createBy = req.auth.sub;
     res.json(yield InstituteService.create(req.body));
 }
 
