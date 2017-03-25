@@ -58,16 +58,46 @@ function* searchCourse(req, res) {
 }
 
 function* getCourses(req, res) {
-    const subject = req.query.subject || '';
+    const list_filter = {
+        subject: String,
+        level: String,
+        institute: String,
+        price: {
+            type: Number,
+            op: '$lt'
+        }
+    }
+    // const subject = req.query.subject || '';
+    // const level = req.query.level || '';
+    // const institute = req.query.institute || '';
+    // const price = req.query.price || 2000
     const limit = parseInt(req.query.limit) || 10;
     const page = parseInt(req.query.page) || 0;
 
-    let find = {}
-    if (subject !== '') {
-        find.subject = subject
-    }
+    let filters = {}
+
+    Object.keys(list_filter).forEach(name => {
+        let _query = req.query[name]
+        // console.log(_query)
+        if (_query !== undefined && _query !== '') {
+            if (list_filter[name].type === Number) {
+                _query = parseInt(_query)
+                if (list_filter[name].op !== undefined) {
+                    filters[name] = {
+                        [list_filter[name].op]: _query
+                    }
+                } else {
+                    filters[name] = _query
+                }
+            } else {
+                filters[name] = _query
+            }
+        }
+    })
+
     try{
-        const courses = Course.find(find)
+        const courses = Course.find(filters)
+            .populate('institute')
             .skip(page*limit)
             .limit(limit)
             .sort( {'createdAt':-1});
