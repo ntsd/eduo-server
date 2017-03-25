@@ -13,8 +13,9 @@ const CourseSchema = new mongoose.Schema({
     require: true
   },
   level: {
-    type: String,
-    require: true
+    type: Number,
+    require: true,
+    enum: _.values(enums.Levels)
   },
   subject: {
     type: String

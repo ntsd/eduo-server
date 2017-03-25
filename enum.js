@@ -24,8 +24,17 @@ const Days ={
     Sunday: "Sunday"
 };
 
+const Levels = {
+    elementary : 1,
+    lowerSecondary : 2,
+    upperSecondary : 3,
+    higherEducation: 4,
+    other: 5
+};
+
 module.exports = {
     SocialType,
     Role,
-    Days
+    Days,
+    Levels
 };
