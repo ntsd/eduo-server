@@ -24,20 +24,20 @@ function* create(req, res) {
 
 function* updateSingle(req, res) {
     const course = yield CourseService.update(req.params.id, req.body);
-    if (course.error) res.json({"msg": "not found"}, 404);
-    else res.json({msg: "update success"}, 200);
+    if (course.error) res.status(404).json({"msg": "not found"});
+    else res.json({msg: "update success"});
 }
 
 function* getSingle(req, res) {
     const course = yield CourseService.getSingle(req.params.id);
-    if (course.error) res.json({"msg": "Course not found"}, 404);
-    else res.json(course, 200);
+    if (course.error) res.status(404).json({"msg": "Course not found"});
+    else res.json(course);
 }
 
 function* deleteSingle(req, res) {
     const course = yield CourseService.deleteSingle(req.params.id);
-    if (course.error) res.json({"msg": "not found"}, 404);
-    else res.json({"msg": "delete success"}, 200);
+    if (course.error) res.status(404).json({"msg": "not found"});
+    else res.json({"msg": "delete success"});
 }
 
 function* searchCourse(req, res) {
@@ -48,7 +48,7 @@ function* searchCourse(req, res) {
         courses.exec(function(err,courses){
             if(err)
                 return res.json({"msg": "Search not found"}, 404);
-            res.json(courses, 200);
+            res.json(courses);
         });
 
     }
@@ -74,11 +74,11 @@ function* getCourses(req, res) {
         courses.exec(function(err,courses){
             if(err)
                 return res.json({"msg": "Search not found"}, 404);
-            res.json(courses, 200);
+            res.json(courses);
         });
 
     }
     catch(e){
-        return res.json({"msg": "error"}, 404);
+        return res.status(404).json({"msg": "error"});
     }
 }
