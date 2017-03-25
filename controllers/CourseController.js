@@ -61,8 +61,13 @@ function* getCourses(req, res) {
     const subject = req.query.subject || '';
     const limit = parseInt(req.query.limit) || 10;
     const page = parseInt(req.query.page) || 0;
+
+    let find = {}
+    if (subject !== '') {
+        find.subject = subject
+    }
     try{
-        const courses = Course.find({subject: subject})
+        const courses = Course.find(find)
             .skip(page*limit)
             .limit(limit)
             .sort( {'createdAt':-1});
