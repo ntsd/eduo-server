@@ -4,12 +4,14 @@
 const ReviewService = require('../services/ReviewService');
 const models = require('../models');
 
+const Review = models.Review;
 
 module.exports = {
     createSingle,
     updateSingle,
     getSingle,
-    deleteSingle
+    deleteSingle,
+    getReviewByCourse
 };
 
 function* createSingle(req, res) {
@@ -33,6 +35,12 @@ function* deleteSingle(req, res) {
 }
 
 function* getSingle(req, res) {
+    const review = yield ReviewService.getSingle(req.params.id);
+    if (review.error) res.json({"msg": "not found"}, 404);
+    else res.json(review, 200);
+}
+
+function* getReviewByCourse(req, res) {
     const review = yield ReviewService.getSingle(req.params.id);
     if (review.error) res.json({"msg": "not found"}, 404);
     else res.json(review, 200);

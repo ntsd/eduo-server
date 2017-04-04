@@ -115,6 +115,13 @@ module.exports = {
             method: 'deleteSingle',
             middleware: [auth()],
         }
+    },
+    '/reviews/:courseId': {
+        post: {
+            controller: 'ReviewController',
+            method: 'getReviewByCourse',
+            middleware: [auth()],
+        }
     }
 
     // '/login/social': {
