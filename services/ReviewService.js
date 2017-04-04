@@ -64,6 +64,7 @@ function* getAllByCourse(id, entity){
 
 function* addReview(courseId ,reviewEntity){//not done
     try{
+        reviewEntity.courseId = courseId;
         const review = yield create(reviewEntity);
         const course = yield Course.findById(courseId, function(err, course) {
             if (err) return console.log(err);

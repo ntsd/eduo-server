@@ -116,11 +116,10 @@ module.exports = {
             middleware: [auth()],
         }
     },
-    '/reviews/:courseId': {
-        post: {
+    '/reviews/:courseid': {
+        get: {
             controller: 'ReviewController',
             method: 'getReviewByCourse',
-            middleware: [auth()],
         }
     }
 

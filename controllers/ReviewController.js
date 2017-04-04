@@ -5,6 +5,7 @@ const ReviewService = require('../services/ReviewService');
 const models = require('../models');
 
 const Review = models.Review;
+const Course = models.Course;
 
 module.exports = {
     createSingle,
@@ -41,7 +42,23 @@ function* getSingle(req, res) {
 }
 
 function* getReviewByCourse(req, res) {
-    const review = yield ReviewService.getSingle(req.params.id);
-    if (review.error) res.json({"msg": "not found"}, 404);
-    else res.json(review, 200);
+    const limit = parseInt(req.query.limit) || 10;
+    const page = parseInt(req.query.page) || 0;
+    const courseId =  req.params.courseid;
+    Review.find( {'courseId': courseId}).skip(page*limit)
+        .limit(limit)
+        .sort( {'createdAt':-1}).exec(function(err,courses){
+        if(err)
+            return res.json({"msg": "error"}, 404);
+        res.json(courses, 200);
+    });
+
+    // Course.findById(courseId, function(err, course) {
+    //     if (err) return res.json({"msg": "error"}, 404);
+    //     console.log(course);
+    //     if(course.reviews) res.json(course.reviews.toObject(), 200);
+    //     else{
+    //         res.json({"msg": "Not Found"}, 200);
+    //     }
+    // });
 }

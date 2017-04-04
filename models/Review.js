@@ -8,6 +8,7 @@ const Schema = mongoose.Schema;
 
 const ReviewSchema = new mongoose.Schema({
     userId: {type: Schema.Types.ObjectId, required: true, ref: 'User' },
+    courseId: {type: Schema.Types.ObjectId, ref: 'Course'},
     comment: {type:String, require:true},
     rating: {type:Number}
 });
