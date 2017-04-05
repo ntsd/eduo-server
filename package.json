@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ntsd/eduo-server#readme",
   "dependencies": {
+    "eslint":"^3.19.0",
     "babel-plugin-syntax-async-functions": "^6.1.4",
     "babel-plugin-transform-regenerator": "^6.1.4",
     "babel-polyfill": "^6.1.4",
