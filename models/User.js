@@ -3,7 +3,6 @@
 const mongoose = require('../datasource').getMongoose();
 const _ = require('lodash');
 const timestamps = require('mongoose-timestamp');
-const Institute = require('./Institute').InstituteSchema;
 const enums = require('../enum');
 const Address = require('./Address').AddressSchema;
 

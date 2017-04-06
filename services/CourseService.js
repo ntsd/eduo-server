@@ -2,8 +2,6 @@
  * Created by Jiravat on 3/2/2560.
  */
 'use strict';
-
-
 const joi = require('joi');
 
 const models = require('../models');
@@ -12,39 +10,44 @@ const Course = models.Course;
 
 const _ = require('lodash');
 
+const User = models.User;
+
+const Institute = models.Institute;
+
+const ReviewService =  require('../services/ReviewService');
+
 module.exports = {
     create,
     update,
-    getAll,
     getSingle,
     deleteSingle,
     search
 };
 
-const courseCreatorUpdateEntityJoi = joi.object().keys({
-    subject: joi.string().required(),
-    description: joi.string(),
-    hour : joi.number(),
-    price: joi.number(),
-    promotion_price: joi.number(),
-    teacher: joi.string(),
-    startDate: joi.date().timestamp(),
-    endDate: joi.date().timestamp(),
-    email : joi.string(),
-    study_times: joi.number(),
-    courseTime: joi.number(),
-    rating: joi.number(),
-    address: joi.string(),
-    website: joi.string(),
-    phone: joi.string(),
-    tags: joi.array(),
-    images: joi.string(),
-    institute: joi.string()
-}).required();
+// const courseCreatorUpdateEntityJoi = joi.object().keys({
+//     subject: joi.string().required(),
+//     description: joi.string(),
+//     hour : joi.number(),
+//     price: joi.number(),
+//     promotion_price: joi.number(),
+//     teacher: joi.string(),
+//     startDate: joi.date().timestamp(),
+//     endDate: joi.date().timestamp(),
+//     email : joi.string(),
+//     study_times: joi.number(),
+//     courseTime: joi.number(),
+//     rating: joi.number(),
+//     address: joi.string(),
+//     website: joi.string(),
+//     phone: joi.string(),
+//     tags: joi.array(),
+//     images: joi.string(),
+//     institute: joi.string()
+// }).required();
 
-create.schema = {
-    entity: courseCreatorUpdateEntityJoi
-};
+// create.schema = {
+//     entity: courseCreatorUpdateEntityJoi
+// };
 
 function* create(entity) {
     const created = yield Course.create(entity);
@@ -67,7 +70,12 @@ function* update(id, entity){
 
 function* getSingle(id) {
     try {
-        const course = yield Course.findOne({_id: id});
+        const course = yield Course.findOne({_id: id}).populate('institute').populate({
+            path: 'reviews',
+            populate: {
+                path: 'userId'
+            }
+        });
         return course.toObject();
     } catch (e) {
         return {
@@ -77,9 +85,6 @@ function* getSingle(id) {
 
 }
 
-function* getAll() {
-
-}
 
 function* deleteSingle(id) {
     try{

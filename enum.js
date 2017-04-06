@@ -14,7 +14,27 @@ const Role = {
     ADMIN: 'admin',
 };
 
+const Days ={
+    Monday: "Monday",
+    Tuesday: "Tuesday",
+    Wednesday: "Wednesday",
+    Thursday: "Thursday",
+    Friday: "Friday",
+    Saturday: "Saturday",
+    Sunday: "Sunday"
+};
+
+const Levels = {
+    elementary : 1,
+    lowerSecondary : 2,
+    upperSecondary : 3,
+    higherEducation: 4,
+    other: 5
+};
+
 module.exports = {
     SocialType,
-    Role
+    Role,
+    Days,
+    Levels
 };

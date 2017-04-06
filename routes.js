@@ -48,7 +48,7 @@ module.exports = {
         },
         put: {
             controller: 'CourseController',
-            method: 'update',
+            method: 'updateSingle',
             middleware: [auth()],
         },
         delete: {
@@ -91,6 +91,35 @@ module.exports = {
             controller: 'InstituteController',
             method: 'create',
             middleware: [auth()],
+        }
+    },
+    '/review/create/:courseid': {
+        post: {
+            controller: 'ReviewController',
+            method: 'createSingle',
+            middleware: [auth()],
+        }
+    },
+    '/review/:id': {
+        get: {
+            controller: 'ReviewController',
+            method: 'getSingle',
+        },
+        put:{
+            controller: 'ReviewController',
+            method: 'updateSingle',
+            middleware: [auth()],
+        },
+        delete:{
+            controller: 'ReviewController',
+            method: 'deleteSingle',
+            middleware: [auth()],
+        }
+    },
+    '/reviews/:courseid': {
+        get: {
+            controller: 'ReviewController',
+            method: 'getReviewByCourse',
         }
     }
 

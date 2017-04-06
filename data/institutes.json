@@ -1,100 +1,136 @@
-[{"name":"O'Connell Inc","location":{"lat":"46.76378","lng":"38.40785"}},
-{"name":"Rempel Inc","location":{"lat":"51.52434","lng":"16.54326"}},
-{"name":"Braun, Feest and Barton","location":{"lat":"-3.3749","lng":"102.7996"}},
-{"name":"Bernier LLC","location":{"lat":"18.755","lng":"-97.6542"}},
-{"name":"Romaguera Group","location":{"lat":"6.89806","lng":"124.5975"}},
-{"name":"MacGyver Group","location":{"lat":"39.7333","lng":"-8.9333"}},
-{"name":"Macejkovic-Davis","location":{"lat":"40.0018","lng":"-75.1179"}},
-{"name":"Wehner, Rutherford and Wunsch","location":{"lat":"17.3324","lng":"120.4954"}},
-{"name":"Roberts, Wiegand and Dare","location":{"lat":"47.9804","lng":"20.9354"}},
-{"name":"Stehr and Sons","location":{"lat":"10.9525","lng":"125.03167"}},
-{"name":"Connelly, Predovic and Haley","location":{"lat":"50.8183","lng":"15.72315"}},
-{"name":"Metz-McClure","location":{"lat":"23.00326","lng":"114.56714"}},
-{"name":"Blick and Sons","location":{"lat":"13.20776","lng":"-2.35893"}},
-{"name":"Crist, Beatty and Barton","location":{"lat":"-0.6868","lng":"103.1841"}},
-{"name":"Kessler, Macejkovic and Robel","location":{"lat":"64.86667","lng":"27.66667"}},
-{"name":"Marquardt-Kessler","location":{"lat":"51.15293","lng":"108.92767"}},
-{"name":"Jenkins, Volkman and Lynch","location":{"lat":"14.13333","lng":"-89.5"}},
-{"name":"Rohan and Sons","location":{"lat":"-7.0064","lng":"112.5079"}},
-{"name":"Kiehn, Bauch and Langosh","location":{"lat":"11.55778","lng":"122.79417"}},
-{"name":"McKenzie and Sons","location":{"lat":"41.2","lng":"-7.5333"}},
-{"name":"Hagenes Group","location":{"lat":"23.45299","lng":"117.10713"}},
-{"name":"Armstrong-O'Connell","location":{"lat":"65.14716","lng":"57.22439"}},
-{"name":"Kassulke and Sons","location":{"lat":"55.08333","lng":"24.28333"}},
-{"name":"Franecki, Little and Heathcote","location":{"lat":"40.46274","lng":"116.09136"}},
-{"name":"Haley Group","location":{"lat":"48.8709","lng":"2.3561"}},
-{"name":"Langworth, Wisoky and Parisian","location":{"lat":"0.03889","lng":"-51.06639"}},
-{"name":"Yost Group","location":{"lat":"49.36304","lng":"16.64446"}},
-{"name":"Bosco-Gutmann","location":{"lat":"67.79846","lng":"130.40119"}},
-{"name":"Emard, Nicolas and Wintheiser","location":{"lat":"-6.9693","lng":"111.4084"}},
-{"name":"Nicolas Inc","location":{"lat":"29.2","lng":"94.08333"}},
-{"name":"Gibson Group","location":{"lat":"16.0208","lng":"-92.975"}},
-{"name":"Mayert, Von and Hirthe","location":{"lat":"33.90213","lng":"104.07156"}},
-{"name":"Walker-Berge","location":{"lat":"28.34659","lng":"115.32742"}},
-{"name":"Torp-Rippin","location":{"lat":"45.4024","lng":"19.58814"}},
-{"name":"Bashirian-Beer","location":{"lat":"2.52295","lng":"-75.31492"}},
-{"name":"Blick Group","location":{"lat":"50.633","lng":"3.0586"}},
-{"name":"Skiles, Schinner and Champlin","location":{"lat":"12.15735","lng":"123.27011"}},
-{"name":"Jones-Mills","location":{"lat":"49.97822","lng":"15.20856"}},
-{"name":"Lowe-Dibbert","location":{"lat":"-38.95161","lng":"-68.0591"}},
-{"name":"Larkin, Haley and Klocko","location":{"lat":"47.5833","lng":"1.3333"}},
-{"name":"Howe-Leffler","location":{"lat":"8.57084","lng":"-70.37524"}},
-{"name":"Steuber and Sons","location":{"lat":"60.0238","lng":"13.6721"}},
-{"name":"Breitenberg Inc","location":{"lat":"35.5514","lng":"-97.4075"}},
-{"name":"Block and Sons","location":{"lat":"49.85802","lng":"18.97708"}},
-{"name":"Larkin, Kautzer and McDermott","location":{"lat":"37.9625","lng":"-121.2624"}},
-{"name":"Gorczany, Hodkiewicz and Reichel","location":{"lat":"25","lng":"114.58333"}},
-{"name":"Roberts, Johnston and Jast","location":{"lat":"11.5071","lng":"10.7459"}},
-{"name":"Walker, Barton and Nikolaus","location":{"lat":"40.80456","lng":"44.4939"}},
-{"name":"Kuhic, Hilpert and Mitchell","location":{"lat":"13.7341","lng":"123.269"}},
-{"name":"Langworth LLC","location":{"lat":"-19.59333","lng":"-46.94056"}},
-{"name":"Leannon Inc","location":{"lat":"-33.4443","lng":"-70.72552"}},
-{"name":"Rohan, Hartmann and Beahan","location":{"lat":"48.9449","lng":"2.6857"}},
-{"name":"Heaney, Tremblay and Stokes","location":{"lat":"42.84147","lng":"45.62746"}},
-{"name":"Halvorson, Terry and Jones","location":{"lat":"-7.3867","lng":"112.8085"}},
-{"name":"Lindgren, Deckow and Johnson","location":{"lat":"49.0667","lng":"6.15"}},
-{"name":"Mueller Group","location":{"lat":"46.08341","lng":"-62.88197"}},
-{"name":"Bosco-Ortiz","location":{"lat":"40.99302","lng":"22.87433"}},
-{"name":"Gaylord-Towne","location":{"lat":"37.07279","lng":"40.65199"}},
-{"name":"Padberg and Sons","location":{"lat":"53.29611","lng":"-7.28944"}},
-{"name":"Bruen Group","location":{"lat":"48.8919","lng":"2.239"}},
-{"name":"Bailey-Parisian","location":{"lat":"-22.76417","lng":"-43.39944"}},
-{"name":"Koch Inc","location":{"lat":"35.4275","lng":"119.45528"}},
-{"name":"Strosin, Christiansen and Braun","location":{"lat":"46.3592","lng":"38.269"}},
-{"name":"Rath-Champlin","location":{"lat":"15.1803","lng":"106.23087"}},
-{"name":"Smitham-Tremblay","location":{"lat":"-28.3529","lng":"-59.25795"}},
-{"name":"Christiansen-Keeling","location":{"lat":"-26.77528","lng":"-51.015"}},
-{"name":"Quigley, Crona and Schiller","location":{"lat":"53.3444","lng":"-1.7395"}},
-{"name":"Streich, Beer and Mayert","location":{"lat":"-3.9072","lng":"119.7441"}},
-{"name":"Satterfield and Sons","location":{"lat":"32.44202","lng":"105.823"}},
-{"name":"Kuhn and Sons","location":{"lat":"22.35054","lng":"113.42026"}},
-{"name":"O'Kon, Towne and Collins","location":{"lat":"33.20002","lng":"97.0305"}},
-{"name":"Breitenberg and Sons","location":{"lat":"44.28848","lng":"85.85731"}},
-{"name":"Walter, Emard and Kohler","location":{"lat":"-6.718","lng":"111.487"}},
-{"name":"Collins Group","location":{"lat":"32.56424","lng":"119.66255"}},
-{"name":"Cartwright, Stroman and Zieme","location":{"lat":"-35.38333","lng":"174.06667"}},
-{"name":"Kovacek LLC","location":{"lat":"37.6802","lng":"-121.9215"}},
-{"name":"Jones Inc","location":{"lat":"-1.72806","lng":"105.45325"}},
-{"name":"Watsica Inc","location":{"lat":"52.3539","lng":"18.7298"}},
-{"name":"Schneider-Shanahan","location":{"lat":"34.24436","lng":"107.60684"}},
-{"name":"Schoen-Donnelly","location":{"lat":"4.60637","lng":"114.32476"}},
-{"name":"Dare and Sons","location":{"lat":"16.75998","lng":"96.52498"}},
-{"name":"Beier-Weber","location":{"lat":"30.35335","lng":"118.77279"}},
-{"name":"Rutherford, Koch and Breitenberg","location":{"lat":"49.05255","lng":"17.52712"}},
-{"name":"Schulist-Keeling","location":{"lat":"20.88722","lng":"-76.26306"}},
-{"name":"Bosco-Kunze","location":{"lat":"17.57732","lng":"121.73497"}},
-{"name":"Ruecker, West and Ledner","location":{"lat":"-7.63894","lng":"108.75706"}},
-{"name":"Dibbert LLC","location":{"lat":"59.25","lng":"17.7833"}},
-{"name":"Bogan, Auer and Feil","location":{"lat":"50.4541","lng":"3.9523"}},
-{"name":"Ward, Hammes and Farrell","location":{"lat":"38.6961","lng":"-9.3557"}},
-{"name":"Lindgren, Becker and Prosacco","location":{"lat":"29.30306","lng":"113.88676"}},
-{"name":"Lynch, Kunze and Daniel","location":{"lat":"43.51667","lng":"118.03333"}},
-{"name":"D'Amore Inc","location":{"lat":"-1.36139","lng":"-48.24472"}},
-{"name":"Cormier LLC","location":{"lat":"47.482","lng":"19.0536"}},
-{"name":"Von Inc","location":{"lat":"29.06226","lng":"106.1189"}},
-{"name":"Konopelski, Haag and Fadel","location":{"lat":"23.30694","lng":"120.31056"}},
-{"name":"Durgan-Kreiger","location":{"lat":"13.2322","lng":"121.1203"}},
-{"name":"Dare, Zemlak and Mraz","location":{"lat":"49.84236","lng":"18.09241"}},
-{"name":"Bednar LLC","location":{"lat":"58.4167","lng":"15.6167"}},
-{"name":"Parker-Hodkiewicz","location":{"lat":"29.3875","lng":"-98.5245"}},
-{"name":"Schmeler, Stark and Weimann","location":{"lat":"-8.3735","lng":"114.895"}}]
+[{
+  "name": "Gigaclub",
+  "coverImage": "http://dummyimage.com/228x239.png/5fa2dd/ffffff",
+  "address": {
+    "coordinates": [
+      150,
+      42
+    ],
+    "line1": "2 Dahle Lane",
+    "line2": "Randy",
+    "city": "Nan’an",
+    "country": "China"
+  }
+}, {
+  "name": "Edgepulse",
+  "coverImage": "http://dummyimage.com/167x168.png/dddddd/000000",
+  "address": {
+    "coordinates": [
+      42,
+      36
+    ],
+    "line1": "8947 Nelson Terrace",
+    "line2": "Morrow",
+    "city": "Týn nad Vltavou",
+    "country": "Czech Republic",
+    "postalCode": "375 01"
+  }
+}, {
+  "name": "Fivebridge",
+  "coverImage": "http://dummyimage.com/194x235.jpg/ff4444/ffffff",
+  "address": {
+    "coordinates": [
+      159,
+      41
+    ],
+    "line1": "3966 Chive Junction",
+    "line2": "Bay",
+    "city": "Wudui",
+    "country": "China"
+  }
+}, {
+  "name": "Riffpath",
+  "coverImage": "http://dummyimage.com/139x185.jpg/cc0000/ffffff",
+  "address": {
+    "coordinates": [
+      138,
+      14
+    ],
+    "line1": "4036 Cardinal Place",
+    "line2": "Canary",
+    "city": "Shentong",
+    "country": "China"
+  }
+}, {
+  "name": "Jatri",
+  "coverImage": "http://dummyimage.com/250x249.jpg/5fa2dd/ffffff",
+  "address": {
+    "coordinates": [
+      28,
+      37
+    ],
+    "line1": "4 Gateway Circle",
+    "line2": "Knutson",
+    "city": "Rana",
+    "country": "Portugal",
+    "postalCode": "2775-389"
+  }
+}, {
+  "name": "Pixonyx",
+  "coverImage": "http://dummyimage.com/222x163.jpg/ff4444/ffffff",
+  "address": {
+    "coordinates": [
+      180,
+      13
+    ],
+    "line1": "2 Loomis Lane",
+    "line2": "Randy",
+    "city": "San Miguel",
+    "country": "Philippines",
+    "postalCode": "8301"
+  }
+}, {
+  "name": "Lazzy",
+  "coverImage": "http://dummyimage.com/156x236.png/5fa2dd/ffffff",
+  "address": {
+    "coordinates": [
+      64,
+      48
+    ],
+    "line1": "6239 Fairview Parkway",
+    "line2": "Debra",
+    "city": "Port-Cartier",
+    "country": "Canada",
+    "postalCode": "G5B"
+  }
+}, {
+  "name": "Roomm",
+  "coverImage": "http://dummyimage.com/161x181.bmp/dddddd/000000",
+  "address": {
+    "coordinates": [
+      118,
+      75
+    ],
+    "line1": "818 Sullivan Crossing",
+    "line2": "Briar Crest",
+    "city": "Al Ya‘rubīyah",
+    "country": "Syria"
+  }
+}, {
+  "name": "Shuffletag",
+  "coverImage": "http://dummyimage.com/199x148.bmp/dddddd/000000",
+  "address": {
+    "coordinates": [
+      108,
+      62
+    ],
+    "line1": "43692 Bartillon Drive",
+    "line2": "Coleman",
+    "city": "Bodø",
+    "country": "Norway",
+    "postalCode": "8010"
+  }
+}, {
+  "name": "Bubblebox",
+  "coverImage": "http://dummyimage.com/159x167.jpg/cc0000/ffffff",
+  "address": {
+    "coordinates": [
+      74,
+      14
+    ],
+    "line1": "4 Vera Junction",
+    "line2": "Cascade",
+    "city": "Jiangdianzi",
+    "country": "China"
+  }
+}]

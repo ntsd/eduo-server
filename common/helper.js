@@ -1,13 +1,4 @@
-/*
- * Copyright (C) 2016 TopCoder Inc., All Rights Reserved.
- */
 'use strict';
-/**
- * Contains generic helper methods
- *
- * @author      TSCCODER
- * @version     1.0
- */
 
 const _ = require('lodash');
 const co = require('co');
