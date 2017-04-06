@@ -2,8 +2,6 @@
  * Created by Jiravat on 3/2/2560.
  */
 'use strict';
-
-
 const joi = require('joi');
 
 const models = require('../models');
@@ -72,7 +70,12 @@ function* update(id, entity){
 
 function* getSingle(id) {
     try {
-        const course = yield Course.findOne({_id: id});
+        const course = yield Course.findOne({_id: id}).populate('institute').populate({
+            path: 'reviews',
+            populate: {
+                path: 'userId'
+            }
+        });
         return course.toObject();
     } catch (e) {
         return {
