@@ -60,7 +60,7 @@ function* searchCourse(req, res) {
 function* getCourses(req, res) {
     const list_filter = {
         subject: String,
-        level: String,
+        level: Number,
         institute: String,
         price: {
             type: Number,
@@ -78,7 +78,6 @@ function* getCourses(req, res) {
 
     Object.keys(list_filter).forEach(name => {
         let _query = req.query[name]
-        // console.log(_query)
         if (_query !== undefined && _query !== '') {
             if (list_filter[name].type === Number) {
                 _query = parseInt(_query)
