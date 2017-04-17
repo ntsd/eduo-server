@@ -39,7 +39,7 @@ function getDb(url, poolSize) {
             auth: {
                 authdb: 'admin'
             }
-        }
+        };
         const db = _mongoose.createConnection(process.env.DB_URL, options);
         dbs[url] = db;
     }

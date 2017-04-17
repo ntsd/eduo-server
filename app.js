@@ -19,7 +19,12 @@ const io = require('socket.io')(http);
 // const swaggerUi = require('swagger-ui-express');
 // const swaggerDocument = require('./swagger.json');
 
-app.set('port', config.PORT);
+if(global.test == "test"){
+    app.set('port', 9000);
+}else{
+    app.set('port', config.PORT);
+}
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false})); //If Encode Can't test with postman
