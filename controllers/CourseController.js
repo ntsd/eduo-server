@@ -24,42 +24,42 @@ function* create(req, res) {
 
 function* updateSingle(req, res) {
     const course = yield CourseService.update(req.params.id, req.body);
-    if (course.error) res.status(404).json({"msg": "not found"});
-    else res.json({msg: "update success"});
+    if (course.error) res.status(404).json({ "msg": "not found" });
+    else res.json({ msg: "update success" });
 }
 
 function* getSingle(req, res) {
     const course = yield CourseService.getSingle(req.params.id);
-    if (course.error) res.status(404).json({"msg": "Course not found"});
+    if (course.error) res.status(404).json({ "msg": "Course not found" });
     else res.json(course);
 }
 
 function* deleteSingle(req, res) {
     const course = yield CourseService.deleteSingle(req.params.id);
-    if (course.error) res.status(404).json({"msg": "not found"});
-    else res.json({"msg": "delete success"});
+    if (course.error) res.status(404).json({ "msg": "not found" });
+    else res.json({ "msg": "delete success" });
 }
 
 function* searchCourse(req, res) {
     var text = req.query.text;
-    try{
-        var courses = Course.find({$text: {$search: text}})
+    try {
+        var courses = Course.find({ $text: { $search: text } })
             .limit(10);
-        courses.exec(function(err,courses){
-            if(err)
-                return res.json({"msg": "Search not found"}, 404);
+        courses.exec(function (err, courses) {
+            if (err)
+                return res.json({ "msg": "Search not found" }, 404);
             res.json(courses);
         });
 
     }
-    catch(e){
-        return res.json({"msg": "error"}, 404);
+    catch (e) {
+        return res.json({ "msg": "error" }, 404);
     }
 }
 
 function* getCourses(req, res) {
     const list_filter = {
-        subject: String,
+        // subject: String,
         level: Number,
         institute: String,
         price: {
@@ -67,12 +67,9 @@ function* getCourses(req, res) {
             op: '$lt'
         }
     }
-    // const subject = req.query.subject || '';
-    // const level = req.query.level || '';
-    // const institute = req.query.institute || '';
-    // const price = req.query.price || 2000
+
     const limit = parseInt(req.query.limit) || 10;
-    const page = parseInt(req.query.page) || 0;
+    const page = parseInt(req.query.page) - 1 || 0;
 
     let filters = {}
 
@@ -93,21 +90,41 @@ function* getCourses(req, res) {
             }
         }
     })
+    
+    if (req.query.subject) {
+        filters.$text = { $search: req.query.subject }
+    }
+    
+    let sort = {
+        // 'createdAt': -1
+    }
 
-    try{
+    if (req.query.sortBy) {
+        let sort_ = req.query.sortBy.split('.')
+        sort[sort_[0]] = parseInt(sort_[1])
+    }
+
+    try {
         const courses = Course.find(filters)
             .populate('institute')
-            .skip(page*limit)
+            .skip(page * limit)
             .limit(limit)
-            .sort( {'createdAt':-1});
-        courses.exec(function(err,courses){
-            if(err)
-                return res.json({"msg": "Search not found"}, 404);
-            res.json(courses);
-        });
+            .sort(sort);
 
+        courses.exec(function (err, courses) {
+            if (err) {
+                return res.json({ "msg": "Search not found" }, 404);
+            }
+            Course.count(filters).exec(function (err, count) {
+                if (err) {
+                    return res.json({ "msg": "Search not found" }, 404);
+                }
+                courses.count = count
+                return res.json({ courses, count });
+            });
+        });
     }
-    catch(e){
-        return res.status(404).json({"msg": "error"});
+    catch (e) {
+        return res.status(404).json({ "msg": "error" });
     }
 }
